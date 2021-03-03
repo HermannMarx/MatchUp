@@ -1,0 +1,12 @@
+.League {
+  background-color: rgb(133, 85, 180);
+  height: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .League {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(210, 223, 26);
+  }
+}

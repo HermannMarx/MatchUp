@@ -1,0 +1,12 @@
+.ChooseLocation {
+  background-color: rgb(255, 0, 170);
+  height: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .ChooseLocation {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+  }
+}

@@ -1,0 +1,12 @@
+.TopBarLogin {
+  background-color: rgb(121, 68, 172);
+  height: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .TopBarLogin {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(28, 142, 150);
+  }
+}

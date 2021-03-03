@@ -1,0 +1,12 @@
+.InvitePlayers {
+  background-color: rgb(128, 0, 255);
+  height: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .InvitePlayers {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(0, 238, 255);
+  }
+}
