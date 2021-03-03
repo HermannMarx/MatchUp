@@ -1,0 +1,11 @@
+.TopBar {
+  background-color: rgb(255, 199, 199);
+}
+
+@media only screen and (max-width: 600px) {
+  .TopBar {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(225, 255, 89);
+  }
+}

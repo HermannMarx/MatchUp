@@ -1,0 +1,24 @@
+.AccountView {
+  background-color: indianred;
+  height: 100vh;
+}
+.buttonContainer {
+  background-color: lawngreen;
+}
+.buttonContainer button {
+  background-color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .AccountView {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(208, 255, 0);
+  }
+  .buttonContainer {
+    background-color: purple;
+  }
+  .buttonContainer button {
+    background-color: green;
+  }
+}

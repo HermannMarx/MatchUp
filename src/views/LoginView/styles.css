@@ -1,0 +1,12 @@
+.LoginView {
+  background-color: rgb(149, 71, 221);
+  height: 30vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .LoginView {
+    width: 100vw;
+    height: 30vh;
+    background-color: rgb(0, 238, 255);
+  }
+}

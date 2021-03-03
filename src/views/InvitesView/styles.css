@@ -1,0 +1,12 @@
+.InvitesView {
+  background-color: rgb(124, 66, 182);
+  height: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .InvitesView {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(190, 114, 84);
+  }
+}

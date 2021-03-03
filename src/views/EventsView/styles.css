@@ -1,0 +1,12 @@
+.EventsView {
+  background-color: rgb(155, 80, 130);
+  height: 10vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .EventsView {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(145, 140, 62);
+  }
+}
