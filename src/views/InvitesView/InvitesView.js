@@ -4,7 +4,9 @@ import Invite from "../../components/Invite/Invite";
 const InvitesView = () => {
   return (
     <div className="InvitesView">
-      Hello InvitesView
+      <Invite />
+      <Invite />
+
       <Invite />
     </div>
   );

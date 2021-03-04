@@ -4,7 +4,8 @@ import League from "../../components/League/League";
 const LeaguesView = () => {
   return (
     <div className="LeaguesView">
-      Hello LeaguesView
+      <League />
+      <League />
       <League />
     </div>
   );

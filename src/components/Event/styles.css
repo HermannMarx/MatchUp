@@ -1,12 +1,14 @@
 .Event {
-  background-color: rgb(218, 113, 183);
-  height: 10vh;
+  height: 33vh;
+  width: 45%;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 1vh auto;
 }
 
 @media only screen and (max-width: 600px) {
   .Event {
-    width: 100vw;
-    height: 10vh;
-    background-color: rgb(201, 194, 97);
+    width: 95vw;
+    height: 33vh;
   }
 }
