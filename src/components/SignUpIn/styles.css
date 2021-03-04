@@ -1,12 +1,13 @@
 .SignUpIn {
-  background-color: rgb(85, 45, 122);
-  height: 10vh;
+  background-color: rgb(46, 46, 46);
+  height: 90vh;
+  width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
   .SignUpIn {
     width: 100vw;
-    height: 10vh;
-    background-color: rgb(22, 89, 145);
+    height: 90vh;
+    background-color: rgb(46, 46, 46);
   }
 }

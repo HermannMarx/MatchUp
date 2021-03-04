@@ -5,7 +5,6 @@ import SignUpIn from "../../components/SignUpIn/SignUpIn";
 const LoginView = () => {
   return (
     <div className="LoginView">
-      Hello LoginView
       <TopBarLogin />
       <SignUpIn />
     </div>

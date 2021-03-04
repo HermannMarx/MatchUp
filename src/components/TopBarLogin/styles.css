@@ -1,12 +1,63 @@
 .TopBarLogin {
-  background-color: rgb(121, 68, 172);
+  background-color: black;
   height: 10vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
+}
+.TopBarLogin img {
+  height: 6vh;
+  margin: 1.5vh 1vw;
+}
+.TopBarLogin p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 8vh;
+  align-self: center;
+  justify-self: center;
+}
+.TopBarLogin button {
+  height: 8vh;
+  width: 8vh;
+  margin-right: 1vh;
+  border: 6px solid gray;
+  border-radius: 20%;
+  font-weight: bold;
+  color: white;
+  background-color: black;
 }
 
 @media only screen and (max-width: 600px) {
   .TopBarLogin {
     width: 100vw;
     height: 10vh;
-    background-color: rgb(28, 142, 150);
+    background-color: black;
+    display: flex;
+    color: whitesmoke;
+  }
+  .TopBarLogin img {
+    height: 6vh;
+    margin: 1.5vh 1vw;
+  }
+
+  .TopBarLogin p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 6vh;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .TopBarLogin button {
+    height: 8vh;
+    width: 8vh;
+    margin-right: 3vh;
+    border: 6px solid gray;
+    border-radius: 20%;
+    font-weight: bold;
+    color: white;
+    background-color: black;
   }
 }
