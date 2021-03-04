@@ -1,12 +1,12 @@
 .SelectView {
-  background-color: rgb(118, 80, 155);
-  height: 10vh;
+  background-color: rgb(46, 46, 46);
+  width: 60vw;
 }
 
 @media only screen and (max-width: 600px) {
   .SelectView {
     width: 100vw;
     height: 10vh;
-    background-color: rgb(62, 139, 145);
+    background-color: rgb(46, 46, 46);
   }
 }
