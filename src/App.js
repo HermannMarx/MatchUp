@@ -1,13 +1,21 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import AccountView from "./views/AccountView/AccountView";
 import LoginView from "./views/LoginView/LoginView";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [userId, setUserId] = useState(null);
+
+  const userIdUpdate = (update) => {
+    setUserId(update);
+  };
+
+  useEffect(() => {
+    console.log("This is user: ", userId);
+  }, [userId]);
 
   const getUser = () => {
     axios.get();
@@ -16,11 +24,11 @@ function App() {
   return (
     <div className="App AppRe">
       <Switch>
-        <Route path="/id">
+        <Route path="/:id">
           <AccountView />
         </Route>
         <Route path="/">
-          <LoginView />
+          <LoginView userUpdate={userIdUpdate} />
         </Route>
       </Switch>
     </div>

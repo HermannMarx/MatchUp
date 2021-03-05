@@ -1,14 +1,35 @@
 import "./styles.css";
+import axios from "axios";
 import TopBar from "../../components/TopBar/TopBar";
 import SelectView from "../SelectView/SelectView";
-import { Route, Switch, NavLink, Link } from "react-router-dom";
+import { Route, Switch, NavLink, Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 const AccountView = () => {
+  const { id } = useParams();
   const [user, setUser] = useState(null);
+  const [events, setEvents] = useState(null);
+  const [leagues, setLeagues] = useState(null);
+  useEffect(() => {
+    axios.get(`http://localhost:3000/users/${id}`).then((res) => {
+      setUser(res.data[0]);
+      console.log("This is the whole User", res.data[0]);
+    });
+  }, []);
+  useEffect(() => {
+    axios.get(`http://localhost:3000/events/${id}/players`).then((res) => {
+      console.log("This is the whole EventData: ", res.data);
+      setEvents(res.data);
+    });
+  }, []);
+  useEffect(() => {
+    axios.get(`http://localhost:3000/leagues/${id}`).then((res) => {
+      setLeagues(res);
+      console.log("This is leagues: ", res);
+    });
+  }, []);
 
-  const getUser = () => {};
+  console.log("This is id: " + id);
 
   return (
     <div className="AccountView">
@@ -16,7 +37,7 @@ const AccountView = () => {
       <div className="centered">
         <div className="buttonContainer">
           <NavLink
-            to="/id/events"
+            to={`/${id}/events`}
             className="link"
             activeStyle={{
               color: "#FDF637",
@@ -26,7 +47,7 @@ const AccountView = () => {
             Events
           </NavLink>
           <NavLink
-            to="/id/invites"
+            to={`/${id}/invites`}
             className="link"
             activeStyle={{
               color: "#FF092D",
@@ -36,7 +57,7 @@ const AccountView = () => {
             Ivites
           </NavLink>
           <NavLink
-            to="/id/leagues"
+            to={`/${id}/leagues`}
             className="link"
             activeStyle={{
               color: "#1239FF",
@@ -46,7 +67,7 @@ const AccountView = () => {
             Ranking
           </NavLink>
         </div>
-        <SelectView />
+        <SelectView events={events} leagues={leagues} />
       </div>
     </div>
   );

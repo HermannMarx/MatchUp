@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, useParams } from "react-router-dom";
 import EventsView from "../EventsView/EventsView";
 import InvitesView from "../InvitesView/InvitesView";
 import LeaguesView from "../LeaguesView/LeaguesView";
@@ -7,7 +7,8 @@ import CreateEvent from "../CreateEvent/CreateEvent";
 import InvitePlayers from "../InvitePlayers/InvitePlayers";
 import ChooseLocation from "../ChooseLocation/ChooseLocation";
 
-const SelectView = () => {
+const SelectView = ({ events, leagues }) => {
+  const { id } = useParams();
   return (
     <div className="SelectView">
       <Switch>
@@ -15,10 +16,10 @@ const SelectView = () => {
           <InvitesView />
         </Route>
         <Route exact path="/:id/events">
-          <EventsView />
+          <EventsView events={events} />
         </Route>
         <Route exact path="/:id/leagues">
-          <LeaguesView />
+          <LeaguesView leagues={leagues} />
         </Route>
         <Route exact path="/:id/create">
           <CreateEvent />

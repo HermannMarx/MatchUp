@@ -4,11 +4,13 @@
   border: 5px solid #fdf637;
   border-radius: 5%;
   margin: 1vh auto;
+  color: whitesmoke;
 }
 
 @media only screen and (max-width: 600px) {
   .Event {
     width: 95vw;
     height: 33vh;
+    color: whitesmoke;
   }
 }
