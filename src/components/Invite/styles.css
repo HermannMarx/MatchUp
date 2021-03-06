@@ -1,12 +1,14 @@
 .Invite {
-  background-color: rgb(144, 84, 204);
-  height: 10vh;
+  height: 33vh;
+  width: 45%;
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  margin: 1vh auto;
 }
 
 @media only screen and (max-width: 600px) {
   .Invite {
-    width: 100vw;
-    height: 10vh;
-    background-color: rgb(223, 26, 213);
+    width: 95vw;
+    height: 33vh;
   }
 }

@@ -11,12 +11,18 @@
   justify-content: space-between;
   width: 60vw;
 }
-.buttonContainer button {
+
+.link {
   width: 32%;
   height: 8vh;
   background-color: rgb(46, 46, 46);
   border-radius: 5%;
-  border: 6px solid rgb(208, 255, 0);
+  border: 6px solid gray;
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 5vh;
+  font-weight: bold;
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -27,6 +33,16 @@
   .buttonContainer {
     width: 100vw;
   }
-  .buttonContainer button {
+  .link {
+    width: 32%;
+    height: 8vh;
+    background-color: rgb(46, 46, 46);
+    border-radius: 5%;
+    border: 6px solid gray;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 3vh;
+    font-weight: bold;
+    text-align: center;
   }
 }

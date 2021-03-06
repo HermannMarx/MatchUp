@@ -1,12 +1,13 @@
 import "./styles.css";
 import TopBarLogin from "../../components/TopBarLogin/TopBarLogin";
 import SignUpIn from "../../components/SignUpIn/SignUpIn";
+import { useEffect } from "react";
 
-const LoginView = () => {
+const LoginView = ({ userUpdate }) => {
   return (
     <div className="LoginView">
       <TopBarLogin />
-      <SignUpIn />
+      <SignUpIn userUpdate={userUpdate} />
     </div>
   );
 };
