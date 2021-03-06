@@ -1,9 +1,8 @@
 .CreateEvent {
-  background-color: rgb(109, 73, 97);
   height: 10vh;
 }
 
-.buttonCreate {
+button {
   background-color: #fdf637;
   width: 10vw;
   height: 5vw;
@@ -22,9 +21,8 @@
   .CreateEvent {
     width: 100vw;
     height: 10vh;
-    background-color: rgb(161, 163, 47);
   }
-  .buttonCreate {
+  button {
     background-color: #fdf637;
     width: 35vw;
     height: 20vw;

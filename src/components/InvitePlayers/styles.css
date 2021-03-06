@@ -1,0 +1,21 @@
+.InvitePlayers {
+  height: auto;
+  width: 90%;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 1vh auto;
+  color: whitesmoke;
+}
+
+.addRemove {
+  width: 5vh;
+  height: 5vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .InvitePlayers {
+    width: 95vw;
+    height: 33vh;
+    color: whitesmoke;
+  }
+}
