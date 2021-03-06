@@ -1,6 +1,6 @@
 import "./styles.css";
 import Event from "../../components/Event/Event";
-import { useParams } from "react-router-dom";
+import { useParams, Route, NavLink, Switch } from "react-router-dom";
 
 const EventsView = ({ events }) => {
   const { id } = useParams();
@@ -14,8 +14,17 @@ const EventsView = ({ events }) => {
             })}
       </div>
       <div className="sticky">
-        <button>+</button>
+        <NavLink to={`/${id}/create`} className="EventsViewLink">
+          <button>+</button>
+        </NavLink>
       </div>
+      {/*    {   <Switch>
+        <Route></Route>
+        <Route></Route>
+        <Route></Route>
+        <Route path={`/${id}/events`}>
+        </Route>}
+      </Switch> */}
     </div>
   );
 };

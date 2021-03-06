@@ -1,13 +1,17 @@
 import "./styles.css";
 import EventForm from "../../components/EventForm/EventForm";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 
 const CreateEvent = () => {
   const { id } = useParams();
   return (
     <div className="CreateEvent">
-      Hello CreateEvent
       <EventForm />
+      <div className="sticky">
+        <NavLink to={`/${id}/location`} className="EventsViewLink">
+          <button className="buttonCreate">Next</button>
+        </NavLink>
+      </div>
     </div>
   );
 };

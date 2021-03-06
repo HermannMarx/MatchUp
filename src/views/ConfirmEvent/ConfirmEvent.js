@@ -1,19 +1,18 @@
 import "./styles.css";
-import LocationForm from "../../components/LocationForm/LocationForm";
+//import LocationForm from "../../components/LocationForm/LocationForm";
 import { useParams, NavLink } from "react-router-dom";
 
-const ChooseLocation = () => {
+const ConfirmEvent = () => {
   const { id } = useParams();
   return (
-    <div className="ChooseLocation">
-      <LocationForm />
+    <div className="ConfirmEvent">
       <div className="sticky">
         <NavLink to={`/${id}/players`} className="EventsViewLink">
-          <button className="buttonLocation">Next</button>
+          <button className="buttonConfirm">Confirm</button>
         </NavLink>
       </div>
     </div>
   );
 };
 
-export default ChooseLocation;
+export default ConfirmEvent;
