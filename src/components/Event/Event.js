@@ -1,20 +1,10 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import EventsView from "../../views/EventsView/EventsView";
 import "./styles.css";
 
 const Event = ({ event }) => {
-  const [organizer, setOrganizer] = useState();
-
-  console.log(event.player_details[0].username);
-
-  useEffect(() => setOrganizer(event.organizer), []);
-  useEffect(
-    () =>
-      event.player_details.map((player, index) => {
-        if (player._id === event.organizer) setOrganizer(player.username);
-      }),
-    [organizer]
-  );
+  const { id } = useParams();
 
   return (
     <div className="Event">
@@ -24,13 +14,13 @@ const Event = ({ event }) => {
       <br />
       Time: {event.starttime}
       <br />
-      Organizer: {organizer ? organizer : null}
+      Organizer: {event.organizer_name ? event.organizer_name : null}
       <br />
       Players:{" "}
-      {event.player_details.map((name, index) => {
+      {event.players.map((name, index) => {
         return (
           <div>
-            {index + 1}. {name.username}
+            {index + 1}. {name.player_name}
           </div>
         );
       })}

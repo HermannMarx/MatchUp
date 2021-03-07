@@ -17,7 +17,7 @@ const AccountView = () => {
     });
   }, []);
   useEffect(() => {
-    axios.get(`http://localhost:3000/events/${id}/players`).then((res) => {
+    axios.get(`http://localhost:3000/events/${id}`).then((res) => {
       console.log("This is the whole EventData: ", res.data);
       setEvents(res.data);
     });
@@ -67,7 +67,7 @@ const AccountView = () => {
             Ranking
           </NavLink>
         </div>
-        <SelectView events={events} leagues={leagues} />
+        <SelectView user={user} events={events} leagues={leagues} />
       </div>
     </div>
   );

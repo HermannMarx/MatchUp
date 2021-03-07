@@ -10,6 +10,11 @@ const InvitePlayers = ({
   removePlayer,
 }) => {
   const { id } = useParams();
+
+  //test
+  useEffect(() => {}, [players]);
+  console.log("THis is players2 username: ", players);
+
   /*   const [players, setPlayers] = useState(["Mary", "John", "Linda", "Anna"]);
   const [invitedPlayers, setInvitedPlayers] = useState([id]);
 
@@ -32,20 +37,36 @@ const InvitePlayers = ({
 
   return (
     <div className="InvitePlayers">
-      {invitedPlayers.map((player, index) => {
+      {players.map((player, index) => {
         return (
           <div>
-            {player}
+            {player.username}
             <button
               className="addRemove"
-              onClick={() => removePlayer(player, index)}
+              onClick={() => addPlayer(player, index)}
             >
-              -
+              +
             </button>
           </div>
         );
       })}
-      {players.map((player, index) => {
+
+      {invitedPlayers === null
+        ? null
+        : invitedPlayers.map((player, index) => {
+            return (
+              <div>
+                {player.username}
+                <button
+                  className="addRemove"
+                  onClick={() => removePlayer(player, index)}
+                >
+                  -
+                </button>
+              </div>
+            );
+          })}
+      {/*     {players.map((player, index) => {
         return (
           <div>
             {player}
@@ -57,7 +78,7 @@ const InvitePlayers = ({
             </button>
           </div>
         );
-      })}
+      })} */}
       <button onClick={() => navCreate(false, true, false, false)}>Back</button>
       <button onClick={() => navCreate(false, false, false, true)}>Next</button>
     </div>

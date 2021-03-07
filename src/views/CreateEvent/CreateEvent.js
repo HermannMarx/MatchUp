@@ -7,7 +7,7 @@ import ConfirmEvent from "../../components/ConfirmEvent/ConfirmEvent";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const CreateEvent = () => {
+const CreateEvent = ({ user }) => {
   const { id } = useParams();
   // state variables to switch the components
   const [activityAndDate, setActivityAndDate] = useState(true);
@@ -24,8 +24,9 @@ const CreateEvent = () => {
   const [starttime, setStarttime] = useState();
   const [endtime, setEndtime] = useState();
   const [organizer, setOrganizer] = useState();
-  const [players, setPlayers] = useState(["Mary", "John", "Linda", "Anna"]);
-  const [invitedPlayers, setInvitedPlayers] = useState([id]);
+  const [players, setPlayers] = useState(null);
+  const [invitedPlayers, setInvitedPlayers] = useState([user]);
+  const [event_id, setEvent_id] = useState();
 
   const addPlayer = (invite, num) => {
     setInvitedPlayers([...invitedPlayers, invite]);
@@ -72,9 +73,16 @@ const CreateEvent = () => {
     console.log("THIS is Start: ", endtime);
   };
 
-  const postEvent = () => {
-    console.log("Creating event");
+  useEffect(() => {
     axios
+      .get("http://localhost:3000/users")
+      .then((res) => setPlayers(res.data));
+  }, []);
+  //test
+
+  const postEvent = async () => {
+    console.log("Creating event");
+    await axios
       .post("http://localhost:3000/events", {
         activity: activity,
         city: city,
@@ -83,10 +91,25 @@ const CreateEvent = () => {
         starttime: starttime,
         endtime: endtime,
         organizer: id,
+        organizer_name: user.username,
         league_id: league_id,
       })
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res.data._id);
+        setEvent_id(res.data._id);
+        //const resLength = res.data.players.length;
+        //players: invitedPlayers,
+      });
   };
+  useEffect(async () => {
+    console.log("This is event_id: ", event_id);
+    await axios
+      .post("http://localhost:3000/events/invite", {
+        id: event_id,
+        players: invitedPlayers,
+      })
+      .then((res) => console.log(res));
+  }, [event_id]);
 
   /*   const tryLogin = (e) => {
     e.preventDefault();
