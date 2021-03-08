@@ -22,15 +22,6 @@ const SelectView = ({ user, events, leagues }) => {
         <Route exact path="/:id/create">
           <CreateEvent user={user} />
         </Route>
-        {/*  <Route exact path="/:id/players">
-          <InvitePlayers />
-        </Route> */}
-        {/*    <Route exact path="/:id/location">
-          <ChooseLocation />
-        </Route> */}
-        {/*   <Route exact path="/:id/confirm">
-          <ConfirmEvent />
-        </Route> */}
         <Route path="/:id/events"></Route>
       </Switch>
     </div>

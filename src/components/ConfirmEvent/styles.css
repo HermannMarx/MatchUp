@@ -7,10 +7,18 @@
   color: whitesmoke;
 }
 
+.navButtons {
+  display: flex;
+}
+
+.textarea {
+  width: 80vw;
+}
+
 @media only screen and (max-width: 600px) {
   .ConfirmEvent {
     width: 95vw;
-    height: 33vh;
+    height: 60vh;
     color: whitesmoke;
   }
 }

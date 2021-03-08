@@ -1,4 +1,6 @@
-.ChooseLocation {
+.chooseLocation {
+}
+.map {
   height: auto;
   width: 90%;
   border: 5px solid #fdf637;
@@ -6,11 +8,27 @@
   margin: 1vh auto;
   color: whitesmoke;
 }
+.tile {
+  height: 1vh;
+  width: auto;
+  display: none;
+}
+
+.navButtons {
+  display: flex;
+}
 
 @media only screen and (max-width: 600px) {
-  .ChooseLocation {
+  .chooseLocation {
+  }
+  .map {
     width: 95vw;
     height: 33vh;
     color: whitesmoke;
+  }
+  .tile {
+    height: 1vh;
+    width: auto;
+    display: none;
   }
 }

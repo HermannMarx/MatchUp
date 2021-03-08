@@ -29,8 +29,6 @@ const AccountView = () => {
     });
   }, []);
 
-  console.log("This is id: " + id);
-
   return (
     <div className="AccountView">
       <TopBar />
