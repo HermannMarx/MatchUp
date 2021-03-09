@@ -12,7 +12,17 @@ const Event = ({ event }) => {
       <br />
       Location: {event.location.city}
       <br />
-      Time: {event.starttime}
+      Date: {event.starttime.split("T")[0]}
+      <br />
+      Start:{" "}
+      {event.starttime.split("T")[1].split(":")[0] +
+        ":" +
+        event.starttime.split("T")[1].split(":")[1]}
+      <br />
+      End:{" "}
+      {event.endtime.split("T")[1].split(":")[0] +
+        ":" +
+        event.endtime.split("T")[1].split(":")[1]}
       <br />
       Organizer: {event.organizer_name ? event.organizer_name : null}
       <br />
@@ -26,6 +36,7 @@ const Event = ({ event }) => {
       })}
       <br />
       Information:
+      {event.information ? event.information : null}
       <br />
       Comments:
     </div>

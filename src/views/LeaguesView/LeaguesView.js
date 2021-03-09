@@ -7,9 +7,11 @@ const LeaguesView = ({ leagues }) => {
   console.log(leagues);
   return (
     <div className="LeaguesView">
-      <League />
-      <League />
-      <League />
+      {leagues
+        ? leagues.map((league, index) => {
+            return <League league={league} />;
+          })
+        : null}
     </div>
   );
 };

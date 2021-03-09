@@ -20,18 +20,16 @@ const AccountView = () => {
   useEffect(() => {
     axios.get(`http://localhost:3000/events/${id}`).then((res) => {
       console.log("This is the whole EventData: ", res.data);
-      setEvents(res.data);
     });
   }, []);
   useEffect(() => {
     axios.get(`http://localhost:3000/events/${id}/getinvites`).then((res) => {
       setInvites(res.data);
-      console.log("THese are all invites: ", res.data);
     });
   }, []);
   useEffect(() => {
     axios.get(`http://localhost:3000/leagues/${id}`).then((res) => {
-      setLeagues(res);
+      setLeagues(res.data);
       console.log("This is leagues: ", res);
     });
   }, []);
@@ -59,7 +57,7 @@ const AccountView = () => {
               border: "6px solid #FF092D",
             }}
           >
-            Ivites
+            Invites
           </NavLink>
           <NavLink
             to={`/${id}/leagues`}
