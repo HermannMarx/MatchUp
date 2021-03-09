@@ -1,14 +1,22 @@
-.Event {
-  height: 33vh;
-  width: 45%;
+.ConfirmEvent {
+  height: auto;
+  width: 90%;
   border: 5px solid #fdf637;
   border-radius: 5%;
   margin: 1vh auto;
   color: whitesmoke;
 }
 
+.navButtons {
+  display: flex;
+}
+
+.textarea {
+  width: 80vw;
+}
+
 @media only screen and (max-width: 600px) {
-  .Event {
+  .ConfirmEvent {
     width: 95vw;
     height: 60vh;
     color: whitesmoke;

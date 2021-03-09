@@ -1,9 +1,23 @@
 .Invite {
-  height: 33vh;
+  height: auto;
   width: 45%;
   border: 5px solid #ff092d;
   border-radius: 5%;
   margin: 1vh auto;
+  overflow: scroll;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+}
+.button {
+  width: 40%;
+  height: auto;
+  color: whitesmoke;
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  background-color: transparent;
 }
 
 @media only screen and (max-width: 600px) {

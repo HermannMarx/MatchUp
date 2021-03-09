@@ -13,14 +13,6 @@ function App() {
     setUserId(update);
   };
 
-  useEffect(() => {
-    console.log("This is user: ", userId);
-  }, [userId]);
-
-  const getUser = () => {
-    axios.get();
-  };
-
   return (
     <div className="App AppRe">
       <Switch>

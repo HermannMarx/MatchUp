@@ -9,6 +9,7 @@ const AccountView = () => {
   const { id } = useParams();
   const [user, setUser] = useState(null);
   const [events, setEvents] = useState(null);
+  const [invites, setInvites] = useState(null);
   const [leagues, setLeagues] = useState(null);
   useEffect(() => {
     axios.get(`http://localhost:3000/users/${id}`).then((res) => {
@@ -17,19 +18,21 @@ const AccountView = () => {
     });
   }, []);
   useEffect(() => {
-    axios.get(`http://localhost:3000/events/${id}/players`).then((res) => {
+    axios.get(`http://localhost:3000/events/${id}`).then((res) => {
       console.log("This is the whole EventData: ", res.data);
-      setEvents(res.data);
+    });
+  }, []);
+  useEffect(() => {
+    axios.get(`http://localhost:3000/events/${id}/getinvites`).then((res) => {
+      setInvites(res.data);
     });
   }, []);
   useEffect(() => {
     axios.get(`http://localhost:3000/leagues/${id}`).then((res) => {
-      setLeagues(res);
+      setLeagues(res.data);
       console.log("This is leagues: ", res);
     });
   }, []);
-
-  console.log("This is id: " + id);
 
   return (
     <div className="AccountView">
@@ -54,7 +57,7 @@ const AccountView = () => {
               border: "6px solid #FF092D",
             }}
           >
-            Ivites
+            Invites
           </NavLink>
           <NavLink
             to={`/${id}/leagues`}
@@ -67,7 +70,12 @@ const AccountView = () => {
             Ranking
           </NavLink>
         </div>
-        <SelectView events={events} leagues={leagues} />
+        <SelectView
+          user={user}
+          events={events}
+          invites={invites}
+          leagues={leagues}
+        />
       </div>
     </div>
   );

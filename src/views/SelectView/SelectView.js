@@ -4,16 +4,14 @@ import EventsView from "../EventsView/EventsView";
 import InvitesView from "../InvitesView/InvitesView";
 import LeaguesView from "../LeaguesView/LeaguesView";
 import CreateEvent from "../CreateEvent/CreateEvent";
-import InvitePlayers from "../InvitePlayers/InvitePlayers";
-import ChooseLocation from "../ChooseLocation/ChooseLocation";
 
-const SelectView = ({ events, leagues }) => {
+const SelectView = ({ user, events, invites, leagues }) => {
   const { id } = useParams();
   return (
     <div className="SelectView">
       <Switch>
         <Route exact path="/:id/invites">
-          <InvitesView />
+          <InvitesView invites={invites} />
         </Route>
         <Route exact path="/:id/events">
           <EventsView events={events} />
@@ -22,15 +20,9 @@ const SelectView = ({ events, leagues }) => {
           <LeaguesView leagues={leagues} />
         </Route>
         <Route exact path="/:id/create">
-          <CreateEvent />
+          <CreateEvent user={user} />
         </Route>
-        <Route exact path="/:id/players">
-          <InvitePlayers />
-        </Route>
-        <Route exact path="/:id/location">
-          <ChooseLocation />
-        </Route>
-        <Route path="/id"></Route>
+        <Route path="/:id/events"></Route>
       </Switch>
     </div>
   );
