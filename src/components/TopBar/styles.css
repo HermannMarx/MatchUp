@@ -28,6 +28,49 @@
   background-color: black;
 }
 
+.TopBar button:active {
+  border: 6px solid whitesmoke;
+}
+.TopBar button:hover {
+  border: 6px solid whitesmoke;
+}
+
+.dropdown {
+  position: absolute;
+  top: 10vh;
+  right: 19vw;
+}
+
+.dropdown li {
+  width: 20vw;
+  height: 5vw;
+  font-size: 2.5vw;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  color: whitesmoke;
+  border: 5px solid gray;
+  background-color: rgb(46, 46, 46);
+
+  border-radius: 5%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.profile:hover {
+  border: 5px solid #fdf637;
+  color: #fdf637;
+}
+.league:hover {
+  border: 5px solid#FF092D;
+  color: #ff092d;
+}
+.logout:hover {
+  border: 5px solid #1239ff;
+  color: #1239ff;
+}
+
 @media only screen and (max-width: 600px) {
   .TopBar {
     width: 100vw;
@@ -58,5 +101,36 @@
     font-weight: bold;
     color: white;
     background-color: black;
+  }
+  .TopBar button:active {
+    border: 6px solid whitesmoke;
+  }
+  .TopBar button:hover {
+    border: 6px solid whitesmoke;
+  }
+
+  .dropdown {
+    position: absolute;
+    right: 0;
+  }
+  .dropdown li {
+    width: 50vw;
+    height: 18.75vw;
+    font-size: 6.25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile {
+    /* border: 5px solid #fdf637; */
+    color: #fdf637;
+  }
+  .league {
+    /*    border: 5px solid#FF092D; */
+    color: #ff092d;
+  }
+  .logout {
+    /*  border: 5px solid #1239ff; */
+    color: #1239ff;
   }
 }
