@@ -19,7 +19,7 @@ const AccountView = () => {
   }, []);
   useEffect(() => {
     axios.get(`http://localhost:3000/events/${id}`).then((res) => {
-      console.log("This is the whole EventData: ", res.data);
+      setEvents(res.data);
     });
   }, []);
   useEffect(() => {

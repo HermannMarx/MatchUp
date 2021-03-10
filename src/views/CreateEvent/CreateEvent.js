@@ -24,8 +24,8 @@ const CreateEvent = ({ user }) => {
   const [city, setCity] = useState();
   const [latLng, setLatLng] = useState(null);
   const [organizer, setOrganizer] = useState();
-  const [players, setPlayers] = useState(null);
-  const [invitedPlayers, setInvitedPlayers] = useState([user]);
+  const [players, setPlayers] = useState({ isLoading: true, data: null });
+  const [invitedPlayers, setInvitedPlayers] = useState([]);
   const [event_id, setEvent_id] = useState();
   const [information, setInformation] = useState();
 
@@ -68,16 +68,29 @@ const CreateEvent = ({ user }) => {
     setInformation(info);
   };
 
+  const updatePlayers = (update) => {
+    setPlayers(update);
+  };
+
   const addPlayer = (invite, num) => {
     setInvitedPlayers([...invitedPlayers, invite]);
-    const splicePlayer = players.splice(num, 1);
-    setPlayers(players);
+    const splicePlayer = players.data.splice(num, 1);
+    setPlayers({ data: players.data });
   };
 
   const removePlayer = (remove, num) => {
-    setPlayers([...players, remove]);
+    console.log("This invites before: ", invitedPlayers);
+    console.log("This players before: ", players.data);
+
+    /*     if ((players.data === [])) {
+      setPlayers({ data: [remove] });
+    } else {
+    } */
+    setPlayers({ data: [...players.data, remove] });
     const splicePlayer = invitedPlayers.splice(num, 1);
     setInvitedPlayers(invitedPlayers);
+    console.log("This invites after: ", invitedPlayers);
+    console.log("This players after: ", players.data);
   };
 
   const postEvent = async () => {
@@ -103,10 +116,15 @@ const CreateEvent = ({ user }) => {
     history.push(`/${id}/events`);
   };
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/users")
-      .then((res) => setPlayers(res.data));
+  useEffect(async () => {
+    await axios.get("http://localhost:3000/users").then((res) => {
+      console.log("This is getPlayers:", res.data);
+      const players = res.data;
+      const spliceOrganzier = res.data.map((player, index) => {
+        if (player._id == id) players.splice(index, 1);
+      });
+      setPlayers({ isLoading: false, data: players });
+    });
   }, []);
 
   useEffect(async () => {
@@ -145,6 +163,7 @@ const CreateEvent = ({ user }) => {
           addPlayer={addPlayer}
           removePlayer={removePlayer}
           navCreate={navCreate}
+          updatePlayers={updatePlayers}
         />
       ) : null}
       {confirmEvent ? (
