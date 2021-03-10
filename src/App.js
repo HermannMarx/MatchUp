@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import AccountView from "./views/AccountView/AccountView";
 import LoginView from "./views/LoginView/LoginView";
+import SignUpView from "./views/SignUpView/SignUpView";
 
 function App() {
   const [userId, setUserId] = useState(null);
@@ -16,6 +17,12 @@ function App() {
   return (
     <div className="App AppRe">
       <Switch>
+        <Route path="/signup">
+          <SignUpView />
+        </Route>
+        <Route path="/login">
+          <LoginView userUpdate={userIdUpdate} />
+        </Route>
         <Route path="/:id">
           <AccountView />
         </Route>

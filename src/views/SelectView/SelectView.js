@@ -7,6 +7,7 @@ import CreateEvent from "../CreateEvent/CreateEvent";
 
 const SelectView = ({ user, events, invites, leagues }) => {
   const { id } = useParams();
+  console.log("This is event from Select", events);
   return (
     <div className="SelectView">
       <Switch>
