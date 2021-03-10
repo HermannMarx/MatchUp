@@ -1,6 +1,5 @@
 import "./styles.css";
-import { useEffect, useState } from "react";
-import ConfirmEvent from "../ConfirmEvent/ConfirmEvent";
+import { useEffect } from "react";
 
 const Activity = ({
   user,
@@ -10,8 +9,6 @@ const Activity = ({
   chooseStarttime,
   chooseEndtime,
 }) => {
-  const sports = ["Basketball", "Football", "Volleyball"];
-
   useEffect(() => {
     if (user === null) {
       console.log("User is loading");

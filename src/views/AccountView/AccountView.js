@@ -2,7 +2,7 @@ import "./styles.css";
 import axios from "axios";
 import TopBar from "../../components/TopBar/TopBar";
 import SelectView from "../SelectView/SelectView";
-import { Route, Switch, NavLink, Link, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const AccountView = () => {

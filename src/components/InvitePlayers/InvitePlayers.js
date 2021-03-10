@@ -1,6 +1,5 @@
 import "./styles.css";
-import { useParams, NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const InvitePlayers = ({
   navCreate,
@@ -11,21 +10,6 @@ const InvitePlayers = ({
   updatePlayers,
 }) => {
   const { id } = useParams();
-
-  //test
-  /*   useEffect(() => {
-    let splice;
-
-    let cleanPlayers = players.map((player, index) => {
-      if (player._id == id) splice = index;
-    });
-    players.splice(splice, 1);
-    updatePlayers(cleanPlayers);
-  }, [players]); */
-
-  console.log("THis is players2 username: ", players);
-
-  console.log("THis is invites: ", invitedPlayers);
 
   return (
     <div>

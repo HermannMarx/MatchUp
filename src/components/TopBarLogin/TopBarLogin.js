@@ -11,7 +11,7 @@ const TopBarLogin = () => {
         <p>MATCH UP</p>
       </div>
 
-      <div></div>
+      <div className="emptyButton"></div>
     </div>
   );
 };

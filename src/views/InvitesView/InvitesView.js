@@ -6,8 +6,6 @@ import axios from "axios";
 const InvitesView = ({ invites }) => {
   const { id } = useParams();
 
-  const history = useHistory();
-
   const accept = (event_id) => {
     axios
       .post(`http://localhost:3000/events/${id}/accept`, {

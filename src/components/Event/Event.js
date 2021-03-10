@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import EventsView from "../../views/EventsView/EventsView";
 import "./styles.css";
 
 const Event = ({ event }) => {
