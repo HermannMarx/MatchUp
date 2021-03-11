@@ -9,19 +9,37 @@ import {
   Popup,
   useMapEvents,
 } from "react-leaflet";
-import icon from "../ChooseLocation/pin.png";
+
+import L from "leaflet";
 
 const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng }) => {
   const { id } = useParams();
 
-  const position = [49.89932450930957, 10.89200371036407];
+  const [position, setPosition] = useState({
+    lat: 49.900962961356534,
+    lng: 10.895021610169728,
+  });
   const [location, setLocation] = useState("");
+  const iconPin = new L.Icon({
+    iconUrl:
+      "https://cdn1.iconfinder.com/data/icons/business-488/128/18-512.png",
+    iconRetinaUrl:
+      "https://cdn1.iconfinder.com/data/icons/business-488/128/18-512.png",
+    iconAnchor: position,
+    popupAnchor: position,
+    shadowUrl: null,
+    shadowSize: null,
+    shadowAnchor: null,
+    iconSize: new L.Point(40, 50),
+    className: "leaflet-div-icon",
+  });
 
   function LocationMarker() {
-    const [position, setPosition] = useState(null);
     const map = useMapEvents({
       click(e) {
         chooseLatLng(e.latlng);
+        console.log("This is LAtLNG: ", e.latlng);
+        console.log("This is postion: ", position);
         setPosition(e.latlng);
         console.log(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
@@ -34,8 +52,8 @@ const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng }) => {
     });
 
     return position === null ? null : (
-      <Marker position={position}>
-        <Popup>You are here</Popup>
+      <Marker position={position} icon={iconPin}>
+        <Popup>Choose the location of your event!</Popup>
       </Marker>
     );
   }
@@ -67,15 +85,10 @@ const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng }) => {
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          /*    url={icon} */
           class="tile"
         />
+
         <LocationMarker />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
       </MapContainer>
 
       <div className="navButtons">
