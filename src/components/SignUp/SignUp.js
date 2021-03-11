@@ -1,5 +1,5 @@
 import "./styles.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import {
@@ -26,9 +26,12 @@ const SignUp = ({ userUpdate }) => {
     "Kubb",
     "Beach Volleyball",
     "Tennis",
-    "American Footbal",
+    "American Football",
     "Rugby",
     "Badminton",
+    "Ping Pong",
+    "Boules",
+    "Ice Hockey",
   ];
 
   const position = [51.35513728554116, 10.0529898448344];

@@ -1,10 +1,10 @@
 import "./styles.css";
-import { useParams, NavLink, useHistory } from "react-router-dom";
 import Activity from "../../components/Activity/Activity";
 import ChooseLocation from "../../components/ChooseLocation/ChooseLocation";
 import InvitePlayers from "../../components/InvitePlayers/InvitePlayers";
 import ConfirmEvent from "../../components/ConfirmEvent/ConfirmEvent";
 import { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const CreateEvent = ({ user }) => {
@@ -28,8 +28,6 @@ const CreateEvent = ({ user }) => {
   const [invitedPlayers, setInvitedPlayers] = useState([]);
   const [event_id, setEvent_id] = useState();
   const [information, setInformation] = useState();
-
-  console.log("this is user from create: ", user);
 
   const navCreate = (bool1, bool2, bool3, bool4) => {
     setActivityAndDate(bool1);
@@ -61,7 +59,6 @@ const CreateEvent = ({ user }) => {
 
   const chooseLatLng = (nav) => {
     setLatLng(nav);
-    console.log("THis is latlng: ", nav);
   };
 
   const newInformation = (info) => {
@@ -79,13 +76,6 @@ const CreateEvent = ({ user }) => {
   };
 
   const removePlayer = (remove, num) => {
-    console.log("This invites before: ", invitedPlayers);
-    console.log("This players before: ", players.data);
-
-    /*     if ((players.data === [])) {
-      setPlayers({ data: [remove] });
-    } else {
-    } */
     setPlayers({ data: [...players.data, remove] });
     const splicePlayer = invitedPlayers.splice(num, 1);
     setInvitedPlayers(invitedPlayers);

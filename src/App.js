@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Route, Switch, Link, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { Route, Switch } from "react-router-dom";
+import { useState } from "react";
 import AccountView from "./views/AccountView/AccountView";
 import LoginView from "./views/LoginView/LoginView";
 import SignUpView from "./views/SignUpView/SignUpView";

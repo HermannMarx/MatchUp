@@ -18,15 +18,11 @@
   align-self: center;
   justify-self: center;
 }
-.TopBarLogin button {
+.emptyButton {
   height: 8vh;
   width: 8vh;
   margin-right: 1vh;
-  border: 6px solid gray;
-  border-radius: 20%;
-  font-weight: bold;
-  color: white;
-  background-color: black;
+  border: 6px solid transparent;
 }
 
 @media only screen and (max-width: 600px) {
