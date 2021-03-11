@@ -1,7 +1,7 @@
 import "./styles.css";
 import { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const SignUpIn = ({ userUpdate }) => {
   let history = useHistory();
@@ -47,6 +47,10 @@ const SignUpIn = ({ userUpdate }) => {
         />
         <input type="submit" value="LOGIN" />
       </form>
+      <p>
+        If you are not signed up yet. Create an account in less than 2 minutes.
+        <Link to="/signup">Click here!</Link>
+      </p>
     </div>
   );
 };
