@@ -22,7 +22,7 @@ const CreateEvent = ({ user }) => {
   const [starttime, setStarttime] = useState();
   const [endtime, setEndtime] = useState();
   const [city, setCity] = useState();
-  const [latLng, setLatLng] = useState(null);
+  const [latLng, setLatLng] = useState(user.location.latLng);
   const [organizer, setOrganizer] = useState();
   const [players, setPlayers] = useState({ isLoading: true, data: null });
   const [invitedPlayers, setInvitedPlayers] = useState([]);
@@ -106,6 +106,10 @@ const CreateEvent = ({ user }) => {
     history.push(`/${id}/events`);
   };
 
+  /*   useEffect(() => {
+    setLatLng(user.location.latLng);
+  }, []);
+ */
   useEffect(async () => {
     await axios.get("http://localhost:3000/users").then((res) => {
       console.log("This is getPlayers:", res.data);
@@ -116,6 +120,23 @@ const CreateEvent = ({ user }) => {
       setPlayers({ isLoading: false, data: players });
     });
   }, []);
+  // get filtered useres
+  useEffect(async () => {
+    await axios
+      .post("http://localhost:3000/users/filter", {
+        latLng: latLng,
+        activity: activity,
+      })
+      .then((res) => {
+        console.log("This is res from filter: ", res);
+        const players = res.data;
+        const spliceOrganzier = res.data.map((player, index) => {
+          if (player._id == id) players.splice(index, 1);
+        });
+        console.log("This is filtered and spliced players: ", res.data);
+        setPlayers({ isLoading: false, data: players });
+      });
+  }, [latLng]);
 
   useEffect(async () => {
     console.log("This is event_id: ", event_id);

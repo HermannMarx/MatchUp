@@ -22,7 +22,7 @@ const SignUp = ({ userUpdate }) => {
   const [latLng, setLatLng] = useState(null);
   const interestsList = [
     "Football",
-    "Basektball",
+    "Basketball",
     "Volleyball",
     "Handball",
     "Kubb",

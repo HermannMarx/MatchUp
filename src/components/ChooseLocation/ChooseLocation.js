@@ -38,8 +38,8 @@ const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng }) => {
     const map = useMapEvents({
       click(e) {
         chooseLatLng(e.latlng);
-        console.log("This is LAtLNG: ", e.latlng);
-        console.log("This is postion: ", position);
+        /*        console.log("This is LAtLNG: ", e.latlng);
+        console.log("This is postion: ", position); */
         setPosition(e.latlng);
         console.log(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
