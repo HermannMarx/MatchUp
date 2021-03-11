@@ -10,6 +10,8 @@ import {
   useMapEvents,
 } from "react-leaflet";
 
+import L from "leaflet";
+
 const SignUp = ({ userUpdate }) => {
   let history = useHistory();
   const [username, setUsername] = useState(null);
@@ -34,10 +36,26 @@ const SignUp = ({ userUpdate }) => {
     "Ice Hockey",
   ];
 
-  const position = [51.35513728554116, 10.0529898448344];
+  const [position, setPosition] = useState({
+    lat: 51.554001946981145,
+    lng: 9.61995069695039,
+  });
+
+  const iconPin = new L.Icon({
+    iconUrl:
+      "https://cdn1.iconfinder.com/data/icons/business-488/128/18-512.png",
+    iconRetinaUrl:
+      "https://cdn1.iconfinder.com/data/icons/business-488/128/18-512.png",
+    iconAnchor: position,
+    popupAnchor: position,
+    shadowUrl: null,
+    shadowSize: null,
+    shadowAnchor: null,
+    iconSize: new L.Point(40, 50),
+    className: "leaflet-div-icon",
+  });
 
   function LocationMarker() {
-    const [position, setPosition] = useState(null);
     const map = useMapEvents({
       click(e) {
         setPosition(e.latlng);
@@ -53,8 +71,8 @@ const SignUp = ({ userUpdate }) => {
     });
 
     return position === null ? null : (
-      <Marker position={position}>
-        <Popup>You are here</Popup>
+      <Marker position={position} icon={iconPin}>
+        <Popup>You want to play here!</Popup>
       </Marker>
     );
   }
@@ -160,7 +178,7 @@ const SignUp = ({ userUpdate }) => {
         <p>Pin the center of your availability!</p>
         <MapContainer
           center={position}
-          zoom={5}
+          zoom={4.5}
           scrollWheelZoom={false}
           className="map"
           id="map"
@@ -168,15 +186,9 @@ const SignUp = ({ userUpdate }) => {
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            /*    url={icon} */
             class="tile"
           />
           <LocationMarker />
-          <Marker position={position}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
         </MapContainer>
         <input type="submit" value="SIGN UP" />
       </form>
