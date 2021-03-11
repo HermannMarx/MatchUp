@@ -1,8 +1,10 @@
 import "./styles.css";
 import icon from "../../icon.png";
 import { useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 
 const TopBar = () => {
+  const { id } = useParams();
   const [dropDown, setDropDown] = useState(false);
 
   const toggleDropDown = () => {
@@ -26,15 +28,21 @@ const TopBar = () => {
         </button>
         {dropDown ? (
           <ul class="dropdown">
-            <li href="#home" className="profile">
-              PROFILE
-            </li>
-            <li href="#about" className="league">
-              NEW LEAGUE
-            </li>
-            <li href="#contact" className="logout">
-              LOGOUT
-            </li>
+            <NavLink to={`/${id}/profile`} onClick={() => toggleDropDown()}>
+              <li href="#home" className="profile">
+                PROFILE
+              </li>
+            </NavLink>
+            <NavLink to={`/${id}/newleague`} onClick={() => toggleDropDown()}>
+              <li href="#about" className="league">
+                NEW LEAGUE
+              </li>
+            </NavLink>
+            <NavLink to={`/logout`}>
+              <li href="#contact" className="logout">
+                LOGOUT
+              </li>
+            </NavLink>
           </ul>
         ) : null}
       </div>
