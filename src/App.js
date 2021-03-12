@@ -4,6 +4,7 @@ import { useState } from "react";
 import AccountView from "./views/AccountView/AccountView";
 import LoginView from "./views/LoginView/LoginView";
 import SignUpView from "./views/SignUpView/SignUpView";
+import LogoutView from "./views/LogoutView/LogoutView";
 
 function App() {
   const [userId, setUserId] = useState(null);
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/login">
           <LoginView userUpdate={userIdUpdate} />
+        </Route>
+        <Route path="/logout">
+          <LogoutView />
         </Route>
         <Route path="/:id">
           <AccountView />

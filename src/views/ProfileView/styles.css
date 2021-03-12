@@ -1,0 +1,13 @@
+.ProfileView {
+  background-color: rgb(70, 70, 70);
+  width: 60vw;
+  min-height: 80vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .ProfileView {
+    width: 100vw;
+    height: 80vh;
+    background-color: rgb(70, 70, 70);
+  }
+}

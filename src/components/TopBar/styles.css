@@ -58,6 +58,10 @@
   font-weight: bold;
 }
 
+.link {
+  text-decoration: none;
+}
+
 .profile:hover {
   border: 5px solid #fdf637;
   color: #fdf637;
