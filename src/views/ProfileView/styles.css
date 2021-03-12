@@ -2,6 +2,14 @@
   background-color: rgb(70, 70, 70);
   width: 60vw;
   min-height: 80vh;
+  color: white;
+}
+.ProfileView button {
+  height: 5vh;
+  font-size: 2vh;
+}
+.row {
+  display: flex;
 }
 
 @media only screen and (max-width: 600px) {
