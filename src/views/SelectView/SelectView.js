@@ -27,7 +27,7 @@ const SelectView = ({ user, events, invites, leagues }) => {
         </Route>
         {/*  <Route path="/:id/events"></Route> */}
         <Route path="/:id/profile">
-          <ProfileView />
+          <ProfileView user={user} />
         </Route>
         <Route path="/:id/newleague">
           <NewLeagueView />
