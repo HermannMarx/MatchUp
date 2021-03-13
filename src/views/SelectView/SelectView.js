@@ -6,6 +6,7 @@ import LeaguesView from "../LeaguesView/LeaguesView";
 import CreateEvent from "../CreateEvent/CreateEvent";
 import ProfileView from "../ProfileView/ProfileView";
 import NewLeagueView from "../NewLeagueView/NewLeagueView";
+import FeedbackView from "../FeedbackView/FeedbackView";
 
 const SelectView = ({ user, events, invites, leagues }) => {
   const { id } = useParams();
@@ -24,6 +25,9 @@ const SelectView = ({ user, events, invites, leagues }) => {
         </Route>
         <Route exact path="/:id/create">
           <CreateEvent user={user} />
+        </Route>
+        <Route path="/:id/feedback/:event">
+          <FeedbackView />
         </Route>
         {/*  <Route path="/:id/events"></Route> */}
         <Route path="/:id/profile">
