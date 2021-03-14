@@ -1,6 +1,21 @@
+import { useParams } from "react-router-dom";
 import "./styles.css";
+import axios from "axios";
 
-const Invite = ({ invite, accept, cancel }) => {
+const Invite = ({ invite, accept, cancel, user }) => {
+  const { id } = useParams();
+  const insertUser = async () => {
+    await axios.post("http://localhost:3000/leagues/insertuser", {
+      activity: invite.activity,
+      player_id: user._id,
+      player_name: user.username,
+    });
+    await axios.put("http://localhost:3000/leagues/attend", {
+      activity: invite.activity,
+      player_id: user._id,
+    });
+  };
+
   return (
     <div className="Invite">
       Activity: {invite.activity}
@@ -34,7 +49,13 @@ const Invite = ({ invite, accept, cancel }) => {
       {invite.information ? invite.information : null}
       <br />
       <div className="buttons">
-        <button className="button" onClick={() => accept(invite._id)}>
+        <button
+          className="button"
+          onClick={() => {
+            insertUser();
+            accept(invite._id);
+          }}
+        >
           Accept
         </button>
         <button className="button" onClick={() => cancel(invite._id)}>

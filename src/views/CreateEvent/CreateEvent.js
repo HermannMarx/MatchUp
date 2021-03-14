@@ -189,6 +189,7 @@ const CreateEvent = ({ user }) => {
           latLng={latLng}
           invitedPlayers={invitedPlayers}
           newInformation={newInformation}
+          user={user}
         />
       ) : null}
     </div>

@@ -1,5 +1,5 @@
-import { useParams } from "react-router";
 import "./styles.css";
+import { Link, useParams } from "react-router-dom";
 
 const Event = ({ event }) => {
   const { id } = useParams();
@@ -32,6 +32,10 @@ const Event = ({ event }) => {
           </div>
         );
       })}
+      <br />
+      <Link to={`/${id}/feedback/${event._id}`} className="feedback">
+        Feedback
+      </Link>
       <br />
       Information:
       {event.information ? event.information : null}

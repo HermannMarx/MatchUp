@@ -3,11 +3,11 @@ import Invite from "../../components/Invite/Invite";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
-const InvitesView = ({ invites }) => {
+const InvitesView = ({ invites, user }) => {
   const { id } = useParams();
 
-  const accept = (event_id) => {
-    axios
+  const accept = async (event_id) => {
+    await axios
       .post(`http://localhost:3000/events/${id}/accept`, {
         event_id: event_id,
       })
@@ -33,7 +33,14 @@ const InvitesView = ({ invites }) => {
       {invites === null
         ? null
         : invites.map((invite, index) => {
-            return <Invite invite={invite} accept={accept} cancel={cancel} />;
+            return (
+              <Invite
+                invite={invite}
+                accept={accept}
+                cancel={cancel}
+                user={user}
+              />
+            );
           })}
     </div>
   );

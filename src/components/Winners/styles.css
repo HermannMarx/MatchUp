@@ -1,25 +1,30 @@
-.Event {
+.Winners {
   height: 33vh;
   width: 45%;
-  border: 5px solid #fdf637;
+  border: 5px solid #1239ff;
   border-radius: 5%;
   margin: 1vh auto;
   color: whitesmoke;
 }
-.feedback {
-  width: 40%;
-  height: auto;
+.field {
   color: whitesmoke;
+  width: 55vw;
+  height: 30vh;
   border: 5px solid #fdf637;
   border-radius: 5%;
-  background-color: transparent;
-  text-decoration: none;
+  overflow: scroll;
+}
+.field button {
+  width: 5vh;
+  height: 5vh;
 }
 
 @media only screen and (max-width: 600px) {
-  .Event {
+  .Winners {
     width: 95vw;
-    height: 60vh;
-    color: whitesmoke;
+    height: 33vh;
+  }
+  .field {
+    width: 90vw;
   }
 }

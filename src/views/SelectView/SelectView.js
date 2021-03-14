@@ -15,7 +15,7 @@ const SelectView = ({ user, events, invites, leagues }) => {
     <div className="SelectView">
       <Switch>
         <Route exact path="/:id/invites">
-          <InvitesView invites={invites} />
+          <InvitesView invites={invites} user={user} />
         </Route>
         <Route exact path="/:id/events">
           <EventsView events={events} />
@@ -26,8 +26,8 @@ const SelectView = ({ user, events, invites, leagues }) => {
         <Route exact path="/:id/create">
           <CreateEvent user={user} />
         </Route>
-        <Route path="/:id/feedback/:event">
-          <FeedbackView />
+        <Route path="/:id/feedback/:event_id">
+          <FeedbackView events={events} />
         </Route>
         {/*  <Route path="/:id/events"></Route> */}
         <Route path="/:id/profile">
