@@ -12,13 +12,10 @@ import {
 
 import L from "leaflet";
 
-const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng }) => {
+const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng, user }) => {
   const { id } = useParams();
 
-  const [position, setPosition] = useState({
-    lat: 49.900962961356534,
-    lng: 10.895021610169728,
-  });
+  const [position, setPosition] = useState(user.location.latLng);
   const [location, setLocation] = useState("");
   const iconPin = new L.Icon({
     iconUrl:

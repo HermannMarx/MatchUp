@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, useHistory } from "react-router-dom";
 import "./styles.css";
 import ChooseAttendants from "../../components/ChooseAttendants/ChooseAttendants";
 import ChooseWinners from "../../components/ChooseWinners/ChooseWinners";
@@ -9,6 +9,8 @@ import Attendants from "../../components/Attendants/Attendants";
 import Winners from "../../components/Winners/Winners";
 
 const FeedbackView = ({ events }) => {
+  const { id } = useParams();
+  const history = useHistory();
   // states to switch between attendants and winners
   // const [chooseAttendants, setChooseAttendants] = useState(true);
   // const [chooseWinners, setChooseWinners] = useState(false);
@@ -22,9 +24,15 @@ const FeedbackView = ({ events }) => {
 
   useEffect(() => {
     const filter = events.filter((event, index) => event._id === event_id);
+    const accFilter = [];
+    console.log("This is accept from feedback: ", filter[0].players);
+    filter[0].players.map((player, index) => {
+      if (player.accept === true) accFilter.push(player);
+    });
+
     setEvent(filter[0]);
     //  setPlayers1(filter[0].players);
-    setPlayers2(filter[0].players);
+    setPlayers2(accFilter);
   }, []);
 
   /*  const toWinners = () => {
@@ -76,7 +84,11 @@ const FeedbackView = ({ events }) => {
       .put("http://localhost:3000/events/feedback", {
         id: event._id,
       })
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res);
+        history.push(`/${id}/events`);
+        window.location.reload();
+      });
   };
 
   return (
