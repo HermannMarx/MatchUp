@@ -23,17 +23,19 @@ const FeedbackView = ({ events }) => {
   const [winners, setWinners] = useState([]);
 
   useEffect(() => {
-    const filter = events.filter((event, index) => event._id === event_id);
-    const accFilter = [];
-    console.log("This is accept from feedback: ", filter[0].players);
-    filter[0].players.map((player, index) => {
-      if (player.accept === true) accFilter.push(player);
-    });
+    if (events !== null) {
+      const filter = events.filter((event, index) => event._id === event_id);
+      const accFilter = [];
+      console.log("This is accept from feedback: ", filter[0].players);
+      filter[0].players.map((player, index) => {
+        if (player.accept === true) accFilter.push(player);
+      });
 
-    setEvent(filter[0]);
-    //  setPlayers1(filter[0].players);
-    setPlayers2(accFilter);
-  }, []);
+      setEvent(filter[0]);
+
+      setPlayers2(accFilter);
+    }
+  }, [events]);
 
   /*  const toWinners = () => {
     setChooseAttendants(false);

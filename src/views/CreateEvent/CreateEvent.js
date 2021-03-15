@@ -22,12 +22,18 @@ const CreateEvent = ({ user }) => {
   const [starttime, setStarttime] = useState();
   const [endtime, setEndtime] = useState();
   const [city, setCity] = useState();
-  const [latLng, setLatLng] = useState(user.location.latLng);
+  const [latLng, setLatLng] = useState();
   const [organizer, setOrganizer] = useState();
   const [players, setPlayers] = useState({ isLoading: true, data: null });
   const [invitedPlayers, setInvitedPlayers] = useState([]);
   const [event_id, setEvent_id] = useState();
   const [information, setInformation] = useState();
+
+  useEffect(() => {
+    if (user !== null) {
+      setLatLng(user.location.latLng);
+    }
+  }, []);
 
   const navCreate = (bool1, bool2, bool3, bool4) => {
     setActivityAndDate(bool1);
