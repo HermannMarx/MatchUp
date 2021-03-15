@@ -31,14 +31,25 @@ const ProfileView = ({ user }) => {
     "Ice Hockey",
     "Wrestling",
   ];
-  const [newUsername, setNewUsername] = useState(user.username);
-  const [newEmail, setNewEmail] = useState(user.email);
-  const [newPW, setNewPW] = useState(user.password);
-  const [deleteInterest, setDeleteInterest] = useState(user.interests[0]);
+  const [newUsername, setNewUsername] = useState(null);
+  const [newEmail, setNewEmail] = useState(null);
+  const [newPW, setNewPW] = useState(null);
+  const [deleteInterest, setDeleteInterest] = useState(null);
   const [newInterest, setNewInterest] = useState(allInterests[0]);
-  const [newCity, setNewCity] = useState(user.location.city);
+  const [newCity, setNewCity] = useState(null);
 
-  const [position, setPosition] = useState(user.location.latLng);
+  const [position, setPosition] = useState(null);
+
+  useEffect(() => {
+    if (user !== null) {
+      setNewUsername(user.username);
+      setNewEmail(user.email);
+      setNewPW(user.password);
+      setDeleteInterest(user.interests[0]);
+      setNewCity(user.location.city);
+      setPosition(user.location.latLng);
+    }
+  }, [user]);
 
   const iconPin = new L.Icon({
     iconUrl:
@@ -130,7 +141,7 @@ const ProfileView = ({ user }) => {
       Username
       <input
         type="text"
-        placeholder={user.username}
+        placeholder={user === null ? null : user.username}
         value={newUsername}
         onChange={(e) => setNewUsername(e.target.value)}
       />
@@ -138,7 +149,7 @@ const ProfileView = ({ user }) => {
       Email
       <input
         type="text"
-        placeholder={user.email}
+        placeholder={user === null ? null : user.email}
         value={newEmail}
         onChange={(e) => setNewEmail(e.target.value)}
       />
@@ -154,9 +165,11 @@ const ProfileView = ({ user }) => {
       <div className="row">
         Your Interests
         <select onChange={(e) => setDeleteInterest(e.target.value)}>
-          {user.interests.map((sport, index) => {
-            return <option value={sport}>{sport}</option>;
-          })}
+          {user === null
+            ? null
+            : user.interests.map((sport, index) => {
+                return <option value={sport}>{sport}</option>;
+              })}
         </select>
         <button onClick={() => removeInterest()}>Delete</button>
       </div>
@@ -174,27 +187,29 @@ const ProfileView = ({ user }) => {
       Your Location:
       <input
         type="text"
-        placeholder={user.location.city}
+        placeholder={user === null ? null : user.location.city}
         value={newCity}
         onChange={(e) => setNewCity(e.target.value)}
       />
       <br />
       Your Location:
-      <MapContainer
-        center={position}
-        zoom={11}
-        scrollWheelZoom={false}
-        className="map"
-        id="map"
-      >
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          class="tile"
-        />
+      {position === null ? null : (
+        <MapContainer
+          center={position}
+          zoom={11}
+          scrollWheelZoom={false}
+          className="map"
+          id="map"
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            class="tile"
+          />
 
-        <LocationMarker />
-      </MapContainer>
+          <LocationMarker />
+        </MapContainer>
+      )}
       <button onClick={() => updateProfile()}>Save All</button>
     </div>
   );

@@ -35,7 +35,9 @@ const InvitePlayers = ({
       </div>
       <p>Choose a player:</p>
       <div className="InvitePlayers">
-        {players.isloading || players.data === []
+        {players.isloading === true ||
+        players.data === [] ||
+        players.data === null
           ? null
           : players.data.map((player, index) => {
               if (player.player_id !== id) {

@@ -34,7 +34,7 @@ const Winners = ({
               );
             })}
       </div>
-      <button onClick={() => submitResults()}></button>
+      <button onClick={() => submitResults()}>Submit</button>
     </div>
   );
 };
