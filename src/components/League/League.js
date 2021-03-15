@@ -1,23 +1,35 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./styles.css";
+import axios from "axios";
 
-const League = ({ league }) => {
+const League = ({ league, user }) => {
   const { id } = useParams();
   const [ranking, setRanking] = useState(null);
-  useEffect(() => {
-    league.players.sort((a, b) => {
-      return b.wins - a.wins;
-    });
-    setRanking(league.players);
-    console.log("This is id from useParams: ", id);
-    console.log("This is player_id: ", league.players[0].player_id);
 
-    /*    numbers.sort(function(a, b) {
-      return a - b;
-    });
-    console.log(numbers); */
+  useEffect(() => {
+    axios
+      .post("http://localhost:3000/users/filter", {
+        latLng: user.location.latLng,
+        activity: league.activity,
+      })
+      .then((res) => {
+        const filtered = [];
+
+        league.players.map((player, index) => {
+          for (let i = 0; i < res.data.length; i++) {
+            if (player.player_id == res.data[i]._id) {
+              filtered.push(player);
+            }
+          }
+        });
+        filtered.sort((a, b) => {
+          return b.wins - a.wins;
+        });
+        setRanking(filtered);
+      });
   }, []);
+
   return (
     <div className="League">
       <p>{league.activity}</p>

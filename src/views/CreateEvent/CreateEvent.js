@@ -110,7 +110,7 @@ const CreateEvent = ({ user }) => {
     setLatLng(user.location.latLng);
   }, []);
  */
-  useEffect(async () => {
+  /*   useEffect(async () => {
     await axios.get("http://localhost:3000/users").then((res) => {
       console.log("This is getPlayers:", res.data);
       const players = res.data;
@@ -119,7 +119,7 @@ const CreateEvent = ({ user }) => {
       });
       setPlayers({ isLoading: false, data: players });
     });
-  }, []);
+  }, []); */
   // get filtered useres
   useEffect(async () => {
     await axios
