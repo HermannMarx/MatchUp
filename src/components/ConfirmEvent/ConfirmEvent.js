@@ -1,6 +1,7 @@
 import "./styles.css";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const ConfirmEvent = ({
   navCreate,
@@ -13,9 +14,21 @@ const ConfirmEvent = ({
   latLng,
   invitedPlayers,
   newInformation,
+  user,
 }) => {
   const { id } = useParams();
   const [info, setInfo] = useState("");
+  const insertUser = async () => {
+    await axios.post("http://localhost:3000/leagues/insertuser", {
+      activity: activity,
+      player_id: user._id,
+      player_name: user.username,
+    });
+    await axios.put("http://localhost:3000/leagues/attend", {
+      activity: activity,
+      player_id: user._id,
+    });
+  };
   return (
     <div>
       <div className="ConfirmEvent">
@@ -70,6 +83,7 @@ const ConfirmEvent = ({
         <button
           onClick={(e) => {
             postEvent();
+            insertUser();
           }}
         >
           Confirm

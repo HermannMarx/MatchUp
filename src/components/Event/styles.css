@@ -1,10 +1,35 @@
 .Event {
-  height: 33vh;
+  height: max-content;
   width: 45%;
   border: 5px solid #fdf637;
   border-radius: 5%;
   margin: 1vh auto;
   color: whitesmoke;
+}
+.feedback {
+  width: 40%;
+  height: auto;
+  color: whitesmoke;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  background-color: transparent;
+  text-decoration: none;
+}
+.infobutton {
+  background-color: transparent;
+  color: whitesmoke;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  width: 40%;
+
+  font-size: 3vh;
+}
+#map {
+  width: 30vw;
+  height: 20vw;
+  color: whitesmoke;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -12,5 +37,13 @@
     width: 95vw;
     height: 60vh;
     color: whitesmoke;
+  }
+  #map {
+    width: 90vw;
+    height: 60vw;
+
+    color: whitesmoke;
+    border: 5px solid #fdf637;
+    border-radius: 5%;
   }
 }

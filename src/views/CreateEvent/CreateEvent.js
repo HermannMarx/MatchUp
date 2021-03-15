@@ -104,13 +104,14 @@ const CreateEvent = ({ user }) => {
       });
     alert("Your event has been created");
     history.push(`/${id}/events`);
+    window.location.reload();
   };
 
   /*   useEffect(() => {
     setLatLng(user.location.latLng);
   }, []);
  */
-  useEffect(async () => {
+  /*   useEffect(async () => {
     await axios.get("http://localhost:3000/users").then((res) => {
       console.log("This is getPlayers:", res.data);
       const players = res.data;
@@ -119,7 +120,7 @@ const CreateEvent = ({ user }) => {
       });
       setPlayers({ isLoading: false, data: players });
     });
-  }, []);
+  }, []); */
   // get filtered useres
   useEffect(async () => {
     await axios
@@ -145,7 +146,7 @@ const CreateEvent = ({ user }) => {
         id: event_id,
         players: invitedPlayers,
       })
-      .then((res) => console.log(res));
+      .then((res) => console.log("This is invites REs: ", res));
   }, [event_id]);
 
   return (
@@ -165,6 +166,7 @@ const CreateEvent = ({ user }) => {
           navCreate={navCreate}
           chooseCity={chooseCity}
           chooseLatLng={chooseLatLng}
+          user={user}
         />
       ) : null}
       {invitePlayers ? (
@@ -189,6 +191,7 @@ const CreateEvent = ({ user }) => {
           latLng={latLng}
           invitedPlayers={invitedPlayers}
           newInformation={newInformation}
+          user={user}
         />
       ) : null}
     </div>

@@ -1,0 +1,30 @@
+.Winners {
+  height: 33vh;
+  width: 45%;
+  border: 5px solid #1239ff;
+  border-radius: 5%;
+  margin: 1vh auto;
+  color: whitesmoke;
+}
+.field {
+  color: whitesmoke;
+  width: 55vw;
+  height: 30vh;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  overflow: scroll;
+}
+.field button {
+  width: 5vh;
+  height: 5vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .Winners {
+    width: 95vw;
+    height: 33vh;
+  }
+  .field {
+    width: 90vw;
+  }
+}

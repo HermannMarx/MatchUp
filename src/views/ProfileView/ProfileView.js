@@ -88,6 +88,7 @@ const ProfileView = ({ user }) => {
       .then((res) => {
         console.log(res);
         history.push(`/${id}/events`);
+        window.location.reload();
       });
   };
 

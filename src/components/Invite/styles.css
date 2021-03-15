@@ -20,6 +20,16 @@
   background-color: transparent;
 }
 
+/* .infobutton {
+  background-color: transparent;
+  color: whitesmoke;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  width: 40%;
+
+  font-size: 3vh;
+} */
+
 @media only screen and (max-width: 600px) {
   .Invite {
     width: 95vw;
