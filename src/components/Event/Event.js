@@ -93,15 +93,6 @@ const Event = ({ event }) => {
               </div>
             );
           })}
-      <br />
-      {event.feedback === false &&
-      event.organizer == id &&
-      event.starttime < expDate ? (
-        <Link to={`/${id}/feedback/${event._id}`} className="feedback">
-          Feedback
-        </Link>
-      ) : null}
-      <br />
       <button className="infobutton" onClick={toggleMap}>
         Location
       </button>
@@ -128,6 +119,13 @@ const Event = ({ event }) => {
         Information
       </button>
       {info ? event.information : null}
+      {event.feedback === false &&
+      event.organizer == id &&
+      event.starttime < expDate ? (
+        <Link to={`/${id}/feedback/${event._id}`} className="feedback">
+          Feedback
+        </Link>
+      ) : null}
     </div>
   );
 };

@@ -12,9 +12,9 @@ const AccountView = () => {
   const [invites, setInvites] = useState(null);
   const [leagues, setLeagues] = useState(null);
   useEffect(() => {
-    axios.get(`http://localhost:3000/users/${id}`).then((res) => {
-      setUser(res.data[0]);
+    axios.get(`/users/${id}`).then((res) => {
       console.log("This is the whole User", res.data[0]);
+      setUser(res.data[0]);
     });
   }, []);
   useEffect(() => {
