@@ -22,8 +22,7 @@
        "command": "npm run build",
       "commandOrigin": "ui",
       "publish": "/opt/build/repo/build"
-    }
-   
+    },
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
