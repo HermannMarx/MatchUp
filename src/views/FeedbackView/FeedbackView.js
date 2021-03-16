@@ -77,13 +77,13 @@ const FeedbackView = ({ events }) => {
       })
       .then((res) => console.log(res)); */
     await axios
-      .put("http://localhost:3000/leagues/win", {
+      .put("/leagues/win", {
         activity: event.activity,
         winners: winners,
       })
       .then((res) => console.log("THis is winners: ", res));
     await axios
-      .put("http://localhost:3000/events/feedback", {
+      .put("/events/feedback", {
         id: event._id,
       })
       .then((res) => {

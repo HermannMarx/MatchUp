@@ -49,12 +49,12 @@ const Invite = ({ invite, accept, cancel, user }) => {
   };
 
   const insertUser = async () => {
-    await axios.post("http://localhost:3000/leagues/insertuser", {
+    await axios.post("/leagues/insertuser", {
       activity: invite.activity,
       player_id: user._id,
       player_name: user.username,
     });
-    await axios.put("http://localhost:3000/leagues/attend", {
+    await axios.put("/leagues/attend", {
       activity: invite.activity,
       player_id: user._id,
     });

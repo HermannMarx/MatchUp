@@ -8,7 +8,7 @@ const InvitesView = ({ invites, user }) => {
 
   const accept = async (event_id) => {
     await axios
-      .post(`http://localhost:3000/events/${id}/accept`, {
+      .post(`/events/${id}/accept`, {
         event_id: event_id,
       })
       .then((res) => {
@@ -19,7 +19,7 @@ const InvitesView = ({ invites, user }) => {
 
   const cancel = (event_id) => {
     axios
-      .post(`http://localhost:3000/events/${id}/cancel`, {
+      .post(`/events/${id}/cancel`, {
         event_id: event_id,
       })
       .then((res) => {

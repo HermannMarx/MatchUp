@@ -19,12 +19,12 @@ const ConfirmEvent = ({
   const { id } = useParams();
   const [info, setInfo] = useState("");
   const insertUser = async () => {
-    await axios.post("http://localhost:3000/leagues/insertuser", {
+    await axios.post("/leagues/insertuser", {
       activity: activity,
       player_id: user._id,
       player_name: user.username,
     });
-    await axios.put("http://localhost:3000/leagues/attend", {
+    await axios.put("/leagues/attend", {
       activity: activity,
       player_id: user._id,
     });

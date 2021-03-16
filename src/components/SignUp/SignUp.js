@@ -80,7 +80,7 @@ const SignUp = ({ userUpdate }) => {
   const createAccount = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/users", {
+      .post("/users", {
         username: username,
         email: email,
         password: password,

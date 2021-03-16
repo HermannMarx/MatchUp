@@ -9,13 +9,13 @@ const League = ({ league, user }) => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:3000/users/filter", {
+      .post("/users/filter", {
         latLng: user.location.latLng,
         activity: league.activity,
       })
       .then((res) => {
         const filtered = [];
-
+        console.log("Proxytest: ", res);
         league.players.map((player, index) => {
           for (let i = 0; i < res.data.length; i++) {
             if (player.player_id == res.data[i]._id) {

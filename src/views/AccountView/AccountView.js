@@ -18,17 +18,18 @@ const AccountView = () => {
     });
   }, []);
   useEffect(() => {
-    axios.get(`http://localhost:3000/events/${id}`).then((res) => {
+    axios.get(`/events/${id}`).then((res) => {
+      console.log("THis is events");
       setEvents(res.data);
     });
   }, []);
   useEffect(() => {
-    axios.get(`http://localhost:3000/events/${id}/getinvites`).then((res) => {
+    axios.get(`/events/${id}/getinvites`).then((res) => {
       setInvites(res.data);
     });
   }, []);
   useEffect(() => {
-    axios.get(`http://localhost:3000/leagues/${id}`).then((res) => {
+    axios.get(`/leagues/${id}`).then((res) => {
       setLeagues(res.data);
       console.log("This is leagues: ", res);
     });
