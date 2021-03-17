@@ -6,6 +6,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+
+/* font-family: 'Caveat', cursive;
+font-family: 'Oswald', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Ubuntu', sans-serif; */
+
+button {
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {

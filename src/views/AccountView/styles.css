@@ -22,9 +22,13 @@
   border: 6px solid gray;
   text-decoration: none;
   color: whitesmoke;
+  font-family: "Oswald", sans-serif;
   font-size: 5vh;
   font-weight: bold;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 600px) {

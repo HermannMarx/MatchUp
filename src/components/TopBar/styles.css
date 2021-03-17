@@ -13,8 +13,8 @@
   border-radius: 20%;
 }
 .TopBar p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  font-family: "Caveat", cursive;
+  font-weight: 900;
   font-size: 8vh;
   align-self: center;
   justify-self: center;
@@ -91,7 +91,7 @@
   }
 
   .TopBar p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Caveat", cursive;
     font-weight: bold;
     font-size: 6vh;
     align-self: center;

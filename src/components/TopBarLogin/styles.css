@@ -13,13 +13,13 @@
   margin-top: 1vh;
   border-radius: 20%;
 }
-.TopBarLogin p {
+/* .TopBarLogin p {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 8vh;
   align-self: center;
   justify-self: center;
-}
+} */
 .emptyButton {
   height: 8vh;
   width: 8vh;
@@ -40,13 +40,13 @@
     margin-left: 1vh;
   }
 
-  .TopBarLogin p {
+  /*   .TopBarLogin p {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 6vh;
     align-self: center;
     justify-self: center;
-  }
+  } */
 
   .TopBarLogin button {
     height: 8vh;
