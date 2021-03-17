@@ -63,39 +63,50 @@ const Event = ({ event }) => {
 
   return (
     <div className="Event">
-      Activity: {event.activity}
-      <br />
-      Location: {event.location.city}
-      <br />
-      Date: {event.starttime.split("T")[0]}
-      <br />
-      Start:{" "}
-      {event.starttime.split("T")[1].split(":")[0] +
-        ":" +
-        event.starttime.split("T")[1].split(":")[1]}
-      <br />
-      End:{" "}
-      {event.endtime.split("T")[1].split(":")[0] +
-        ":" +
-        event.endtime.split("T")[1].split(":")[1]}
-      <br />
-      Organizer: {event.organizer_name ? event.organizer_name : null}
-      <br />
-      <button className="infobutton" onClick={togglePlayers}>
-        Players
-      </button>
-      {playersList === false
-        ? null
-        : event.players.map((name, index) => {
-            return (
-              <div>
-                {index + 1}. {name.player_name}
-              </div>
-            );
-          })}
-      <button className="infobutton" onClick={toggleMap}>
-        Location
-      </button>
+      <div className="infoBlock">
+        <div>Activity:</div>
+        <div>{event.activity}</div>
+        <div>Location:</div>
+        <div>{event.location.city}</div>
+        <div>Date:</div>
+        <div>{event.starttime.split("T")[0]}</div>
+        <div>Start: </div>
+        <div>
+          {event.starttime.split("T")[1].split(":")[0] +
+            ":" +
+            event.starttime.split("T")[1].split(":")[1]}
+        </div>
+        <div>End: </div>
+        <div>
+          {event.endtime.split("T")[1].split(":")[0] +
+            ":" +
+            event.endtime.split("T")[1].split(":")[1]}
+        </div>
+        <div>Organizer:</div>
+        <div>{event.organizer_name ? event.organizer_name : null}</div>
+      </div>
+      <div className="infoButtonContainer">
+        <button className="infobutton" onClick={togglePlayers}>
+          Players
+        </button>
+        <button className="infobutton" onClick={toggleMap}>
+          Location
+        </button>
+        <button className="infobutton" onClick={toggleInfo}>
+          Information
+        </button>
+      </div>
+      <div className={playersList ? `playerList` : ""}>
+        {playersList === false
+          ? null
+          : event.players.map((name, index) => {
+              return (
+                <div>
+                  {index + 1}. {name.player_name}
+                </div>
+              );
+            })}
+      </div>
       {map === false ? null : (
         <MapContainer
           center={position ? position : null}
@@ -115,10 +126,13 @@ const Event = ({ event }) => {
           </Marker>
         </MapContainer>
       )}
-      <button className="infobutton" onClick={toggleInfo}>
-        Information
-      </button>
-      {info ? event.information : null}
+      <div className={info ? "infoField" : ""}>
+        {info
+          ? event.information === null
+            ? "No informaton"
+            : event.information
+          : null}
+      </div>
       {event.feedback === false &&
       event.organizer == id &&
       event.endtime < expDate ? (
