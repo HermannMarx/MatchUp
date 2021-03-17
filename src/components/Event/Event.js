@@ -121,7 +121,7 @@ const Event = ({ event }) => {
       {info ? event.information : null}
       {event.feedback === false &&
       event.organizer == id &&
-      event.starttime < expDate ? (
+      event.endtime < expDate ? (
         <Link to={`/${id}/feedback/${event._id}`} className="feedback">
           Feedback
         </Link>

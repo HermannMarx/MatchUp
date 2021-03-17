@@ -88,7 +88,7 @@ const ProfileView = ({ user }) => {
 
   const updateProfile = () => {
     axios
-      .put("http://localhost:3000/users", {
+      .put("/users", {
         id: id,
         username: newUsername,
         email: newEmail,
@@ -109,7 +109,7 @@ const ProfileView = ({ user }) => {
       if (interest === deleteInterest) remove.splice(index, 1);
     });
     await axios
-      .put("http://localhost:3000/users/rmsport", {
+      .put("/users/rmsport", {
         id: id,
         interests: remove,
       })
@@ -124,7 +124,7 @@ const ProfileView = ({ user }) => {
     if (!add.includes(newInterest)) add.push(newInterest);
 
     await axios
-      .put("http://localhost:3000/users/addsport", {
+      .put("/users/addsport", {
         id: id,
         interests: add,
       })

@@ -92,7 +92,7 @@ const CreateEvent = ({ user }) => {
   const postEvent = async () => {
     console.log(Date.now());
     await axios
-      .post("http://localhost:3000/events", {
+      .post("/events", {
         activity: activity,
         city: city,
         latLng: latLng,
@@ -130,7 +130,7 @@ const CreateEvent = ({ user }) => {
   // get filtered useres
   useEffect(async () => {
     await axios
-      .post("http://localhost:3000/users/filter", {
+      .post("/users/filter", {
         latLng: latLng,
         activity: activity,
       })
@@ -148,7 +148,7 @@ const CreateEvent = ({ user }) => {
   useEffect(async () => {
     console.log("This is event_id: ", event_id);
     await axios
-      .post("http://localhost:3000/events/invite", {
+      .post("/events/invite", {
         id: event_id,
         players: invitedPlayers,
       })
