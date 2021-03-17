@@ -15,7 +15,7 @@ const EventsView = ({ events }) => {
     }
   }, [events]); */
   return (
-    <div className="EventsView">
+    <div className="ContentView">
       <div className="eventContainer">
         {events === null
           ? null
@@ -23,9 +23,9 @@ const EventsView = ({ events }) => {
               return <Event event={event} />;
             })}
       </div>
-      <div className="sticky">
+      <div>
         <NavLink to={`/${id}/create`} className="EventsViewLink">
-          <button className="selectbutton">+</button>
+          <button className="selectbutton sticky">+</button>
         </NavLink>
       </div>
     </div>

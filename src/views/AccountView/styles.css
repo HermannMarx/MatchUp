@@ -1,5 +1,7 @@
 .AccountView {
-  height: 100vh;
+  /* height: 100vh; */
+  height: fit-content;
+  min-height: 100vh;
 }
 .centered {
   display: flex;
@@ -28,7 +30,8 @@
 @media only screen and (max-width: 600px) {
   .AccountView {
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
+    min-height: 100vh;
   }
   .buttonContainer {
     width: 100vw;

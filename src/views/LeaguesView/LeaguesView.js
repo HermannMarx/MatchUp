@@ -7,7 +7,7 @@ const LeaguesView = ({ leagues, user }) => {
 
   console.log(leagues);
   return (
-    <div className="LeaguesView">
+    <div className="LeaguesView ContentView">
       {leagues
         ? leagues.map((league, index) => {
             return <League league={league} user={user} />;

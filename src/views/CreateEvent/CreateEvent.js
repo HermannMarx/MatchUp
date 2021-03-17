@@ -109,8 +109,6 @@ const CreateEvent = ({ user }) => {
         setEvent_id(res.data._id);
       });
     alert("Your event has been created");
-    history.push(`/${id}/events`);
-    window.location.reload();
   };
 
   /*   useEffect(() => {
@@ -152,7 +150,11 @@ const CreateEvent = ({ user }) => {
         id: event_id,
         players: invitedPlayers,
       })
-      .then((res) => console.log("This is invites REs: ", res));
+      .then((res) => {
+        console.log("This is invites REs: ", res);
+        // history.push(`/${id}/events`);
+        // window.location.reload();
+      });
   }, [event_id]);
 
   return (
