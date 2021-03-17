@@ -32,24 +32,34 @@ const League = ({ league, user }) => {
 
   return (
     <div className="League">
-      <p>{league.activity}</p>
-      {ranking === null
-        ? null
-        : ranking.map((player, index) => {
-            if (player.player_id == id)
+      <div className="leagueName">
+        <p>{league.activity}</p>
+      </div>
+      <div>
+        {ranking === null
+          ? null
+          : ranking.map((player, index) => {
+              if (player.player_id == id)
+                return (
+                  <div className="infoBlock marked">
+                    <div>
+                      <p className="you">{index + 1}. You</p>
+                    </div>
+                    <div className="you">Wins:{player.wins}</div>
+                  </div>
+                );
               return (
-                <p style={{ color: "red" }}>
-                  {index + 1}. You Wins:{player.wins} Attended:
-                  {player.attend}
-                </p>
+                <div className="infoBlock">
+                  <div>
+                    {index + 1}. {player.player_name}
+                  </div>
+                  <div>
+                    <p>Wins:{player.wins}</p>
+                  </div>
+                </div>
               );
-            return (
-              <p>
-                {index + 1}. {player.player_name} Wins:{player.wins} Attended:
-                {player.attend}
-              </p>
-            );
-          })}
+            })}
+      </div>
     </div>
   );
 };

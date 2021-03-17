@@ -63,6 +63,16 @@ const Event = ({ event }) => {
 
   return (
     <div className="Event">
+      <div className="feedbackContainer">
+        {event.feedback === false &&
+        event.organizer == id &&
+        event.endtime < expDate ? (
+          <Link to={`/${id}/feedback/${event._id}`} className="feedback">
+            <button>Feedback</button>
+          </Link>
+        ) : null}
+      </div>
+
       <div className="infoBlock">
         <div>Activity:</div>
         <div>{event.activity}</div>
@@ -87,24 +97,26 @@ const Event = ({ event }) => {
       </div>
       <div className="infoButtonContainer">
         <button className="infobutton" onClick={togglePlayers}>
-          Players
+          PLAYERS
         </button>
         <button className="infobutton" onClick={toggleMap}>
-          Location
+          MAP
         </button>
         <button className="infobutton" onClick={toggleInfo}>
-          Information
+          INFO
         </button>
       </div>
       <div className={playersList ? `playerList` : ""}>
         {playersList === false
           ? null
           : event.players.map((name, index) => {
-              return (
-                <div>
-                  {index + 1}. {name.player_name}
-                </div>
-              );
+              if (name.accept === true) {
+                return <div className="accept">{name.player_name}</div>;
+              } else if (name.answer === false) {
+                return <div className="pending">{name.player_name}</div>;
+              } else {
+                return <div className="cancel">{name.player_name}</div>;
+              }
             })}
       </div>
       {map === false ? null : (
@@ -133,13 +145,6 @@ const Event = ({ event }) => {
             : event.information
           : null}
       </div>
-      {event.feedback === false &&
-      event.organizer == id &&
-      event.endtime < expDate ? (
-        <Link to={`/${id}/feedback/${event._id}`} className="feedback">
-          Feedback
-        </Link>
-      ) : null}
     </div>
   );
 };

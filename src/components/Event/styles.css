@@ -5,6 +5,7 @@
   border-radius: 5%;
   margin: 1vh auto;
   color: whitesmoke;
+  /*   padding: 2vh; */
 }
 
 .infoBlock {
@@ -12,17 +13,27 @@
   margin: 2vh auto;
   display: grid;
   grid-template-columns: 40% 60%;
+  color: whitesmoke;
+}
+
+.feedbackContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .feedback {
-  width: 40%;
-  height: auto;
-  color: whitesmoke;
-  border: 5px solid #fdf637;
-  border-radius: 5%;
-  background-color: transparent;
   text-decoration: none;
 }
+
+.feedback button {
+  margin-top: 2vh;
+}
+.feedback button:hover {
+  background-color: transparent;
+  color: whitesmoke;
+  border: 5px solid #fdf637;
+}
+
 .infoButtonContainer {
   display: flex;
   justify-content: space-around;
@@ -35,7 +46,13 @@
   border: 5px solid #fdf637;
   border-radius: 5%;
   width: 30%;
+  height: 7vh;
   font-size: 3vh;
+}
+
+.infobutton:hover {
+  background-color: #fdf637;
+  color: black;
 }
 .playerList {
   width: 90%;
@@ -45,6 +62,21 @@
   border-radius: 5%;
   padding: 2vh;
   grid-template-columns: 50% 50%;
+}
+
+.accept {
+  color: #1239ff;
+  font-weight: bold;
+}
+
+.pending {
+  color: #fdf637;
+  font-weight: bold;
+}
+
+.cancel {
+  color: #ff092d;
+  font-weight: bold;
 }
 
 #map {
@@ -61,18 +93,16 @@
   border: 5px solid #fdf637;
   border-radius: 5%;
   margin: 2vh auto;
+  padding: 2vh;
 }
 
 @media only screen and (max-width: 600px) {
   .Event {
     width: 95vw;
-    height: 60vh;
     color: whitesmoke;
   }
   #map {
-    width: 90vw;
     height: 60vw;
-
     color: whitesmoke;
     border: 5px solid #fdf637;
     border-radius: 5%;
