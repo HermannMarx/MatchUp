@@ -8,8 +8,10 @@
   color: whitesmoke;
 }
 .TopBarLogin img {
-  height: 6vh;
-  margin: 1.5vh 1vw;
+  height: 8.5vh;
+  margin-left: 1vh;
+  margin-top: 1vh;
+  border-radius: 20%;
 }
 .TopBarLogin p {
   font-family: Arial, Helvetica, sans-serif;
@@ -34,8 +36,8 @@
     color: whitesmoke;
   }
   .TopBarLogin img {
-    height: 6vh;
-    margin: 1.5vh 1vw;
+    height: 8.5vh;
+    margin-left: 1vh;
   }
 
   .TopBarLogin p {

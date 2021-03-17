@@ -107,6 +107,8 @@ const CreateEvent = ({ user }) => {
       .then((res) => {
         console.log(res.data._id);
         setEvent_id(res.data._id);
+        history.push(`/${id}/events`);
+        window.location.reload();
       });
     alert("Your event has been created");
   };
@@ -152,8 +154,6 @@ const CreateEvent = ({ user }) => {
       })
       .then((res) => {
         console.log("This is invites REs: ", res);
-        // history.push(`/${id}/events`);
-        // window.location.reload();
       });
   }, [event_id]);
 
