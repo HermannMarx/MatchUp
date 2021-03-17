@@ -1,7 +1,7 @@
 {
   "name": "matchup",
   "version": "0.1.0",
-  "proxy": "http://localhost:3000",
+  "proxy": "https://matchup-be.herokuapp.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",

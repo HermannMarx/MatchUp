@@ -31,7 +31,7 @@ const SignUpIn = ({ userUpdate }) => {
     e.preventDefault();
     axios
       .post(
-        "https://matchup-be.herokuapp.com/users/login",
+        "/users/login",
         {
           username: username,
           password: password,

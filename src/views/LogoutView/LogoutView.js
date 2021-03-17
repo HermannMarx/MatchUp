@@ -5,9 +5,7 @@ import "./styles.css";
 
 const LogoutView = () => {
   useEffect(() => {
-    axios
-      .get("https://matchup-be.herokuapp.com/users/logout")
-      .then((res) => console.log(res));
+    axios.get("/users/logout").then((res) => console.log(res));
   }, []);
   return (
     <div className="LogoutView">
