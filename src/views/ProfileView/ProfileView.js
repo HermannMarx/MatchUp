@@ -136,8 +136,7 @@ const ProfileView = ({ user }) => {
 
   return (
     <div className="ProfileView">
-      Edit your Profile!
-      <br />
+      <p className="title">Edit your Profile!</p>
       <div className="profileGrid">
         <div>Username:</div>
         <div>
@@ -207,11 +206,8 @@ const ProfileView = ({ user }) => {
       </div>
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
       Your Location:
+      <br />
       {position === null ? null : (
         <MapContainer
           center={position}

@@ -3,11 +3,22 @@
   width: 60vw;
   min-height: 80vh;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  margin: 2vh auto;
+  font-weight: bold;
 }
 
 .profileGrid {
+  width: 60%;
+  justify-content: center;
   display: grid;
-  grid-template-columns: 30% 40% 10%;
+  grid-template-columns: 30% 45% 25%;
   grid-template-rows: 20% 20% 20% 20% 20% 20% 20%;
 }
 .ProfileView button {
@@ -24,6 +35,13 @@
     height: 80vh;
     background-color: rgb(70, 70, 70);
   }
+  .profileGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 45% 25%;
+    grid-template-rows: 20% 20% 20% 20% 20% 20% 20%;
+  }
+
   .ProfileView button {
     width: 20vw;
   }

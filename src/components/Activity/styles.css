@@ -7,6 +7,14 @@
   color: whitesmoke;
 }
 
+.activityBlock {
+  width: 60%;
+  margin: 2vh auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  color: whitesmoke;
+}
+
 .navButtons {
   display: flex;
 }
