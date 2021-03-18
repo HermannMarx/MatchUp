@@ -1,8 +1,14 @@
 p {
   color: whitesmoke;
 }
+
+.title {
+  font-weight: bold;
+  text-align: center;
+}
+
 .InvitePlayers {
-  height: auto;
+  height: 25vh;
   width: 90%;
   border: 5px solid #fdf637;
   border-radius: 5%;
@@ -28,5 +34,9 @@ p {
     height: 25vh;
     color: whitesmoke;
     overflow: scroll;
+  }
+  .title {
+    font-weight: bold;
+    text-align: center;
   }
 }

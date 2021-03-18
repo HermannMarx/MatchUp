@@ -58,11 +58,13 @@ const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng, user }) => {
   return (
     <div className="chooseLocation">
       <form>
-        <label>
-          Location:
+        <div className="title flex">
+          <p>Location:</p>
+
           <input
             type="text"
             name="location"
+            id="location"
             maxlength="50"
             value={location}
             onChange={(e) => {
@@ -70,7 +72,7 @@ const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng, user }) => {
               chooseCity(e.target.value);
             }}
           />
-        </label>
+        </div>
       </form>
       <MapContainer
         center={position}

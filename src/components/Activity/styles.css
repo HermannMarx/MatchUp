@@ -1,10 +1,4 @@
 .Activity {
-  height: auto;
-  width: 90%;
-  border: 5px solid #fdf637;
-  border-radius: 5%;
-  margin: 1vh auto;
-  color: whitesmoke;
 }
 
 .activityBlock {
@@ -15,14 +9,31 @@
   color: whitesmoke;
 }
 
+.innerCircle {
+  height: auto;
+  width: 90%;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 1vh auto;
+  color: whitesmoke;
+}
+
 .navButtons {
   display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
   .Activity {
     width: 95vw;
     height: 33vh;
+    color: whitesmoke;
+  }
+  .activityBlock {
+    width: 90%;
+    margin: 2vh auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
     color: whitesmoke;
   }
 }
