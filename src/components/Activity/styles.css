@@ -1,4 +1,15 @@
 .Activity {
+}
+
+.activityBlock {
+  width: 60%;
+  margin: 2vh auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  color: whitesmoke;
+}
+
+.innerCircle {
   height: auto;
   width: 90%;
   border: 5px solid #fdf637;
@@ -9,12 +20,20 @@
 
 .navButtons {
   display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
   .Activity {
     width: 95vw;
     height: 33vh;
+    color: whitesmoke;
+  }
+  .activityBlock {
+    width: 90%;
+    margin: 2vh auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
     color: whitesmoke;
   }
 }
