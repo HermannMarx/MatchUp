@@ -21,7 +21,7 @@ button {
 }
 
 p {
-  font-size: 1vh;
+  font-size: 2vh;
 }
 
 @media only screen and (max-width: 600px) {

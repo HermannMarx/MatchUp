@@ -211,8 +211,7 @@ const ProfileView = ({ user }) => {
           center={position}
           zoom={11}
           scrollWheelZoom={false}
-          className="map"
-          id="map"
+          className="profilemap"
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

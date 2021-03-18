@@ -11,10 +11,10 @@ const LogoutView = () => {
   return (
     <div className="LogoutView">
       <TopBarLogin />
-      <p className="title">You are logged out!</p>
+      <p className="logout">You are logged out!</p>
       <br />
       <p className="logout">
-        Get back to the login.{" "}
+        Get back to the login. <br />
         <Link to="/login" className="linkLogout">
           Click here!
         </Link>

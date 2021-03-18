@@ -8,12 +8,6 @@
   align-items: center;
 }
 
-p {
-  font-size: 5vh;
-  color: whitesmoke;
-  text-align: center;
-}
-
 .title {
   text-align: center;
   margin: 2vh auto;
@@ -30,6 +24,10 @@ p {
 .ProfileView button {
   height: 5vh;
   font-size: 2vh;
+}
+
+.profilemap {
+  height: 30vh;
 }
 
 .row {

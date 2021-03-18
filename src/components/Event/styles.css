@@ -79,12 +79,13 @@
   font-weight: bold;
 }
 
-#map {
+.eventmap {
   width: 90%;
   height: 20vw;
   color: whitesmoke;
   border: 5px solid #fdf637;
   border-radius: 5%;
+  margin: 2vh auto;
 }
 .infoField {
   width: 90%;
@@ -101,7 +102,8 @@
     width: 95vw;
     color: whitesmoke;
   }
-  #map {
+  .eventmap {
+    width: 90%;
     height: 60vw;
     color: whitesmoke;
     border: 5px solid #fdf637;

@@ -54,33 +54,51 @@ const SignUpIn = ({ userUpdate }) => {
 
   return (
     <div className="SignUpIn">
-      Login in!
+      <br />
+      <div>Login in!</div>
+      <br />
       <form onSubmit={(e) => tryLogin(e)}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          name="username"
-          required
-          id="username"
-        />
+        <div>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            name="username"
+            required
+            id="username"
+          />
+        </div>
+
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+            required
+            id="password"
+          />
+        </div>
         <br />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          name="password"
-          required
-          id="password"
-        />
-        <input type="submit" value="LOGIN" />
+
+        <div className="buttonDiv">
+          <input type="submit" value="LOGIN" className="loginButton" />
+        </div>
+
+        <br />
       </form>
-      <p>
-        If you are not signed up yet. Create an account in less than 2 minutes.
-        <Link to="/signup">Click here!</Link>
-      </p>
+      <div>
+        <p className="signupline">
+          If you are not signed up yet. Create an account in less than 2
+          minutes.
+          <br />
+          <Link to="/signup" className="signuplink">
+            Click here!
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

@@ -59,7 +59,7 @@ const ChooseLocation = ({ navCreate, chooseCity, chooseLatLng, user }) => {
     <div className="chooseLocation">
       <form>
         <div className="title flex">
-          <p>Location:</p>
+          <p className="title">Location:</p>
 
           <input
             type="text"

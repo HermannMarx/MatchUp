@@ -1,7 +1,7 @@
 import "./styles.css";
 import icon from "../../icon.png";
 import { useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, Link } from "react-router-dom";
 
 const TopBar = () => {
   const { id } = useParams();
@@ -14,7 +14,9 @@ const TopBar = () => {
   return (
     <div className="TopBar">
       <div>
-        <img src={icon} />
+        <Link to={`/${id}/events`}>
+          <img src={icon} />
+        </Link>
       </div>
       <div>
         <p>MATCH UP</p>

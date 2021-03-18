@@ -2,10 +2,18 @@
   width: 45%;
   height: fit-content;
   max-height: 50vh;
-  overflow: scroll;
+  /* overflow: scroll; */
   border: 5px solid #1239ff;
   border-radius: 5%;
   margin: 1vh auto;
+}
+
+.League div {
+  font-size: 2vh;
+}
+
+.League p {
+  font-size: 2vh;
 }
 
 .leagueName {

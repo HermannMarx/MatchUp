@@ -9,32 +9,46 @@ const Winners = ({
 }) => {
   return (
     <div>
-      Select Winners
+      <p className="selectwinners">Select Winners</p>
       <div className="field">
-        {players2 === null
-          ? null
-          : players2.map((player, index) => {
-              return (
-                <p>
-                  {player.player_name}
-                  <button onClick={() => addWinner(player, index)}>+</button>
-                </p>
-              );
-            })}
+        <div className="winnerBlock">
+          {players2 === null
+            ? null
+            : players2.map((player, index) => {
+                return (
+                  <div className="inRow">
+                    <div>{player.player_name}</div>
+                    <div>
+                      <button onClick={() => addWinner(player, index)}>
+                        +
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+        </div>
       </div>
       <div className="field">
-        {winners === null
-          ? null
-          : winners.map((winner, index) => {
-              return (
-                <p>
-                  {winner.player_name}
-                  <button onClick={() => removeWinner(winner, index)}>-</button>
-                </p>
-              );
-            })}
+        <div className="winnerBlock">
+          {winners === null
+            ? null
+            : winners.map((winner, index) => {
+                return (
+                  <div className="inRow">
+                    <div>{winner.player_name}</div>
+                    <div>
+                      <button onClick={() => removeWinner(winner, index)}>
+                        -
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+        </div>
       </div>
-      <button onClick={() => submitResults()}>Submit</button>
+      <button onClick={() => submitResults()} className="submitButton">
+        Submit
+      </button>
     </div>
   );
 };

@@ -5,6 +5,8 @@ p {
 .title {
   font-weight: bold;
   text-align: center;
+  font-size: 3vh;
+  color: whitesmoke;
 }
 
 .InvitePlayers {

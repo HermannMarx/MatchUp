@@ -13,26 +13,6 @@ const InvitePlayers = ({
 
   return (
     <div>
-      <p className="title">Invited Players:</p>
-      <div className="InvitePlayers">
-        {invitedPlayers === []
-          ? null
-          : invitedPlayers.map((player, index) => {
-              if (player._id === id) return null;
-              else
-                return (
-                  <div className="playerSelect">
-                    {player.username}
-                    <button
-                      className="addRemove"
-                      onClick={() => removePlayer(player, index)}
-                    >
-                      -
-                    </button>
-                  </div>
-                );
-            })}
-      </div>
       <p className="title">Choose a player:</p>
       <div className="InvitePlayers">
         {players.isloading === true ||
@@ -53,6 +33,27 @@ const InvitePlayers = ({
                   </div>
                 );
               } else return null;
+            })}
+      </div>
+      <div className="title">Invited Players:</div>
+
+      <div className="InvitePlayers">
+        {invitedPlayers === []
+          ? null
+          : invitedPlayers.map((player, index) => {
+              if (player._id === id) return null;
+              else
+                return (
+                  <div className="playerSelect">
+                    {player.username}
+                    <button
+                      className="addRemove"
+                      onClick={() => removePlayer(player, index)}
+                    >
+                      -
+                    </button>
+                  </div>
+                );
             })}
       </div>
       <div className="navButtons">

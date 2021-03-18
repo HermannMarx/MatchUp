@@ -5,7 +5,14 @@
   display: flex;
   margin: 2vh auto;
   width: 50%;
+  height: 4vh;
+  align-items: center;
+  justify-content: center;
 }
+
+/* .locationInput {
+  height: 4vh;
+} */
 #map {
   height: auto;
   width: 90%;

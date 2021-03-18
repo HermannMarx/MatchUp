@@ -124,8 +124,7 @@ const Event = ({ event }) => {
           center={position ? position : null}
           zoom={11}
           scrollWheelZoom={false}
-          className="map"
-          id="map"
+          className="eventmap"
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

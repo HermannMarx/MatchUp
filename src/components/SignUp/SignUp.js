@@ -185,25 +185,31 @@ const SignUp = ({ userUpdate }) => {
             <input type="submit" value="SIGN UP" id="submit" />
           </div>
 
+          <br />
+          <br />
           <div className="location">
-            <label>
-              Name your Location to play:
-              <input
-                type="text"
-                name="city"
-                maxlength="50"
-                value={city}
-                onChange={(e) => {
-                  setCity(e.target.value);
-                  console.log(city);
-                }}
-                className="input"
-              />
-            </label>
-            <br />
+            <div className="city">
+              <div>
+                <label>Name your Location to play:</label>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="city"
+                  maxlength="50"
+                  value={city}
+                  onChange={(e) => {
+                    setCity(e.target.value);
+                    console.log(city);
+                  }}
+                  className="input"
+                />
+              </div>
+            </div>
+
             <br />
 
-            <p>Pin the center of your availability!</p>
+            <p>Pin the center of your availability:</p>
             <MapContainer
               center={position}
               zoom={4.5}

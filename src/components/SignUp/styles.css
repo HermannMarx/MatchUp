@@ -17,7 +17,6 @@
 }
 
 .input {
-  height: 5vh;
 }
 
 .interestAndLocation {
@@ -31,6 +30,11 @@
 
 .location {
   width: 50%;
+}
+
+.city {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 #map {
