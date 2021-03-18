@@ -33,7 +33,6 @@ const SignUp = ({ userUpdate }) => {
     "Badminton",
     "Ping Pong",
     "Boules",
-    "Ice Hockey",
   ];
 
   const [position, setPosition] = useState({
@@ -96,101 +95,131 @@ const SignUp = ({ userUpdate }) => {
 
   return (
     <div className="SignUp">
-      Create an account in just 2 minutes ;)
+      <div className="title">Create an account in just 2 minutes ;)</div>
       <form onSubmit={(e) => createAccount(e)}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value);
-            console.log("THis is username: ", username);
-          }}
-          name="username"
-          required
-          id="username"
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-            console.log("THis is email: ", email);
-          }}
-          name="email"
-          required
-          id="email"
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-            console.log("This is password: ", password);
-          }}
-          name="password"
-          required
-          id="password"
-        />
-        <p>Choose your interests:</p>
-        {interestsList.map((interest, index) => {
-          return (
-            <div>
-              <label for={interest}>{interest}</label>
-              <input
-                type="checkbox"
-                id={interest}
-                name={interest}
-                value={interest}
-                onChange={(e) => {
-                  if (interests.includes(e.target.value)) {
-                    let filtered = interests.filter((interest, index) => {
-                      return interest !== e.target.value;
-                    });
-                    setInterests(filtered);
-                    console.log(interests);
-                  } else {
-                    setInterests([...interests, e.target.value]);
-                    console.log(interests);
-                  }
-                }}
-              />
-            </div>
-          );
-        })}
-        <label>
-          Name your Location to play:
+        <div className="inputContainer">
+          <label for="username">Choose a username: </label>{" "}
           <input
             type="text"
-            name="city"
-            maxlength="50"
-            value={city}
+            placeholder="Username"
+            value={username}
             onChange={(e) => {
-              setCity(e.target.value);
-              console.log(city);
+              setUsername(e.target.value);
+              console.log("THis is username: ", username);
             }}
+            name="username"
+            className="input"
+            required
+            id="username"
           />
-        </label>
-        <p>Pin the center of your availability!</p>
-        <MapContainer
-          center={position}
-          zoom={4.5}
-          scrollWheelZoom={false}
-          className="map"
-          id="map"
-        >
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            class="tile"
+        </div>
+        <div className="inputContainer">
+          <label for="email">Type in your email: </label>{" "}
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              console.log("THis is email: ", email);
+            }}
+            name="email"
+            className="input"
+            required
+            id="email"
           />
-          <LocationMarker />
-        </MapContainer>
-        <input type="submit" value="SIGN UP" />
+        </div>
+        <div className="inputContainer">
+          <label for="passeword">Choose a password: </label>{" "}
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              console.log("This is password: ", password);
+            }}
+            name="password"
+            className="input"
+            required
+            id="password"
+          />
+        </div>
+        <div className="interestAndLocation">
+          <div className="interests">
+            <p>Choose your interests:</p>
+            <br />
+            <div className="profileGridSignUp">
+              {interestsList.map((interest, index) => {
+                return (
+                  <div className="checkboxGrid">
+                    <div>
+                      <label for={interest}>{interest}</label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        id={interest}
+                        name={interest}
+                        value={interest}
+                        onChange={(e) => {
+                          if (interests.includes(e.target.value)) {
+                            let filtered = interests.filter(
+                              (interest, index) => {
+                                return interest !== e.target.value;
+                              }
+                            );
+                            setInterests(filtered);
+                            console.log(interests);
+                          } else {
+                            setInterests([...interests, e.target.value]);
+                            console.log(interests);
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <input type="submit" value="SIGN UP" id="submit" />
+          </div>
+
+          <div className="location">
+            <label>
+              Name your Location to play:
+              <input
+                type="text"
+                name="city"
+                maxlength="50"
+                value={city}
+                onChange={(e) => {
+                  setCity(e.target.value);
+                  console.log(city);
+                }}
+                className="input"
+              />
+            </label>
+            <br />
+            <br />
+
+            <p>Pin the center of your availability!</p>
+            <MapContainer
+              center={position}
+              zoom={4.5}
+              scrollWheelZoom={false}
+              className="map"
+              id="map"
+            >
+              <TileLayer
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                class="tile"
+              />
+              <LocationMarker />
+            </MapContainer>
+          </div>
+        </div>
       </form>
     </div>
   );

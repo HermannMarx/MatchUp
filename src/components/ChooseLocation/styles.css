@@ -1,6 +1,12 @@
 .chooseLocation {
 }
-.map {
+
+.flex {
+  display: flex;
+  margin: 2vh auto;
+  width: 50%;
+}
+#map {
   height: auto;
   width: 90%;
   border: 5px solid #fdf637;

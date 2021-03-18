@@ -1,22 +1,111 @@
 .SignUp {
-  background-color: rgb(46, 46, 46);
-  height: 90vh;
   width: 100%;
   color: whitesmoke;
+  background-color: rgb(70, 70, 70);
+  height: fit-content;
+  min-height: 80vh;
+}
+.containerContainer {
+  display: flex;
+  justify-content: center;
+}
+.inputContainer {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2vh auto;
 }
 
-.map {
-  width: 40vw;
+.input {
+  height: 5vh;
+}
+
+.interestAndLocation {
+  display: flex;
+  justify-content: space-around;
+}
+
+.interests {
+  width: 40%;
+}
+
+.location {
+  width: 50%;
+}
+
+#map {
+  width: 60vh;
   height: 40vh;
+}
+
+.profileGridSignUp {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 30% 30% 30% 30%;
+}
+.checkboxGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+#submit {
+  position: absolute;
+  bottom: 15vh;
+  left: 30vw;
+  background-color: #fdf637;
+  width: 6vw;
+  height: 3vw;
+  border-radius: 5%;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
   .SignUp {
     width: 100vw;
-    height: 90vh;
+    height: 200vh;
+    min-height: 100vh;
     background-color: rgb(46, 46, 46);
+    display: flex;
+    flex-direction: column;
   }
-  .map {
+
+  .containerContainer {
+  }
+  .inputContainer {
+    width: 100%;
+
+    margin: 2vh auto;
+  }
+
+  .input {
+    height: auto;
+  }
+
+  .interests {
+    width: 100%;
+  }
+
+  .location {
+    width: 100%;
+  }
+
+  .profileGrid {
+  }
+  .checkboxGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+  .interestAndLocation {
+    display: flex;
+    flex-direction: column;
+  }
+  #map {
     width: 95vw;
     height: 65vw;
   }

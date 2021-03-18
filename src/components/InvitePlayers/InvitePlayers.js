@@ -13,7 +13,7 @@ const InvitePlayers = ({
 
   return (
     <div>
-      <p>Invited Players:</p>
+      <p className="title">Invited Players:</p>
       <div className="InvitePlayers">
         {invitedPlayers === []
           ? null
@@ -33,7 +33,7 @@ const InvitePlayers = ({
                 );
             })}
       </div>
-      <p>Choose a player:</p>
+      <p className="title">Choose a player:</p>
       <div className="InvitePlayers">
         {players.isloading === true ||
         players.data === [] ||
