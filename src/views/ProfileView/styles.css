@@ -28,6 +28,10 @@
 
 .profilemap {
   height: 30vh;
+  width: 60%;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 2vh auto;
 }
 
 .row {
@@ -37,14 +41,18 @@
 @media only screen and (max-width: 600px) {
   .ProfileView {
     width: 100vw;
-    height: 80vh;
+    height: 82vh;
     background-color: rgb(70, 70, 70);
   }
   .profileGrid {
-    width: 100%;
+    width: 95%;
     display: grid;
     grid-template-columns: 30% 45% 25%;
     grid-template-rows: 20% 20% 20% 20% 20% 20% 20%;
+  }
+  .profilemap {
+    height: 30vh;
+    width: 90%;
   }
 
   .ProfileView button {

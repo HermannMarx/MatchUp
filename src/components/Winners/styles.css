@@ -14,11 +14,19 @@
   margin: 2vh auto;
 }
 
-.inRow {
+/* .inRow {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+} */
+
+.inRow {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 .field {
   color: whitesmoke;
@@ -53,6 +61,16 @@
   }
   .field {
     width: 90vw;
+  }
+  .winnerBlock {
+    width: 95vw;
+  }
+  .inRow {
+    display: flex;
+    width: 30vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
   }
   .submitButton {
     /* position: -webkit-sticky; */

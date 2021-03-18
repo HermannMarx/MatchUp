@@ -35,6 +35,13 @@
   font-weight: bold;
 }
 
+/* .leagueBlock {
+  width: 80%;
+  display: grid;
+  color: whitesmoke;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+} */
 @media only screen and (max-width: 600px) {
   .League {
     width: 95vw;

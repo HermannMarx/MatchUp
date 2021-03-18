@@ -16,10 +16,20 @@ p {
   border-radius: 5%;
   margin: 1vh auto;
   color: whitesmoke;
-  overflow: scroll;
+  /*  overflow: scroll; */
+}
+.playerBlock {
+  display: grid;
+  width: 80%;
+  margin: 2vh auto;
+  grid-template-columns: 50% 50%;
 }
 .playerSelect {
   display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .addRemove {
@@ -40,5 +50,11 @@ p {
   .title {
     font-weight: bold;
     text-align: center;
+  }
+  .playerBlock {
+    width: 95vw;
+  }
+  .playerSelect {
+    width: 40vw;
   }
 }

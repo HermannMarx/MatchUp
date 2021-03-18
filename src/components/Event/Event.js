@@ -115,7 +115,7 @@ const Event = ({ event }) => {
               } else if (name.answer === false) {
                 return <div className="pending">{name.player_name}</div>;
               } else {
-                return <div className="cancel">{name.player_name}</div>;
+                return <div className="canceled">{name.player_name}</div>;
               }
             })}
       </div>

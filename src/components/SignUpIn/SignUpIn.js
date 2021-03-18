@@ -55,7 +55,7 @@ const SignUpIn = ({ userUpdate }) => {
   return (
     <div className="SignUpIn">
       <br />
-      <div>Login in!</div>
+      <div>Welcome</div>
       <br />
       <form onSubmit={(e) => tryLogin(e)}>
         <div>
@@ -91,8 +91,9 @@ const SignUpIn = ({ userUpdate }) => {
       </form>
       <div>
         <p className="signupline">
-          If you are not signed up yet. Create an account in less than 2
-          minutes.
+          If you are not signed up yet,
+          <br />
+          create an account in less than 2 minutes.
           <br />
           <Link to="/signup" className="signuplink">
             Click here!

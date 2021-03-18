@@ -58,27 +58,30 @@
 }
 
 #accept {
-  background-color: transparent;
-  color: whitesmoke;
+  /*  background-color: transparent;
+  color: whitesmoke; */
   border: 5px solid #1239ff;
   border-radius: 5%;
   width: 30%;
   height: 7vh;
   font-size: 3vh;
-}
-
-#accept:hover {
   background-color: #1239ff;
   color: black;
 }
-/* .infobutton {
-  background-color: transparent;
-  color: whitesmoke;
-  border: 5px solid #fdf637;
-  border-radius: 5%;
-  width: 40%;
 
+.cancel {
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  width: 30%;
+  height: 7vh;
   font-size: 3vh;
+  background-color: #ff092d;
+  color: black;
+}
+
+/* #accept:hover {
+  background-color: #1239ff;
+  color: black;
 } */
 
 @media only screen and (max-width: 600px) {
@@ -91,10 +94,10 @@
     color: black;
   }
 
-  #accept:hover {
+  /*   #accept:hover {
     background-color: #1239ff;
     color: black;
-  }
+  } */
 
   .invitemap {
     height: 60vw;

@@ -122,7 +122,7 @@ const Invite = ({ invite, accept, cancel, user }) => {
               } else if (name.answer === false) {
                 return <div className="pending">{name.player_name}</div>;
               } else {
-                return <div className="cancel">{name.player_name}</div>;
+                return <div className="canceled">{name.player_name}</div>;
               }
               /*   return (
                 <div>
@@ -164,7 +164,7 @@ const Invite = ({ invite, accept, cancel, user }) => {
         >
           ACCEPT
         </button>
-        <button className="invitebutton" onClick={() => cancel(invite._id)}>
+        <button className="cancel" onClick={() => cancel(invite._id)}>
           CANCEL
         </button>
       </div>

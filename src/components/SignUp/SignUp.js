@@ -95,7 +95,7 @@ const SignUp = ({ userUpdate }) => {
 
   return (
     <div className="SignUp">
-      <div className="title">Create an account in just 2 minutes ;)</div>
+      <div className="title">Create an account in less than 2 minutes ;)</div>
       <form onSubmit={(e) => createAccount(e)}>
         <div className="inputContainer">
           <label for="username">Choose a username: </label>{" "}
