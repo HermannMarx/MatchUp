@@ -4,6 +4,12 @@
   min-height: 80vh;
   color: white;
 }
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 30% 40% 10%;
+  grid-template-rows: 20% 20% 20% 20% 20% 20% 20%;
+}
 .ProfileView button {
   height: 5vh;
   font-size: 2vh;
@@ -17,5 +23,8 @@
     width: 100vw;
     height: 80vh;
     background-color: rgb(70, 70, 70);
+  }
+  .ProfileView button {
+    width: 20vw;
   }
 }

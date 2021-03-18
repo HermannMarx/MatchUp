@@ -138,59 +138,78 @@ const ProfileView = ({ user }) => {
     <div className="ProfileView">
       Edit your Profile!
       <br />
-      Username
-      <input
-        type="text"
-        placeholder={user === null ? null : user.username}
-        value={newUsername}
-        onChange={(e) => setNewUsername(e.target.value)}
-      />
-      <br />
-      Email
-      <input
-        type="text"
-        placeholder={user === null ? null : user.email}
-        value={newEmail}
-        onChange={(e) => setNewEmail(e.target.value)}
-      />
-      <br />
-      Password
-      <input
-        type="password"
-        placeholder="Type in a password"
-        value={newPW}
-        onChange={(e) => setNewPW(e.target.value)}
-      />
-      <br />
-      <div className="row">
-        Your Interests
-        <select onChange={(e) => setDeleteInterest(e.target.value)}>
-          {user === null
-            ? null
-            : user.interests.map((sport, index) => {
-                return <option value={sport}>{sport}</option>;
-              })}
-        </select>
-        <button onClick={() => removeInterest()}>Delete</button>
+      <div className="profileGrid">
+        <div>Username:</div>
+        <div>
+          <input
+            type="text"
+            placeholder={user === null ? null : user.username}
+            value={newUsername}
+            onChange={(e) => setNewUsername(e.target.value)}
+          />
+        </div>
+        <div></div>
+        <div>Email:</div>
+
+        <div>
+          <input
+            type="text"
+            placeholder={user === null ? null : user.email}
+            value={newEmail}
+            onChange={(e) => setNewEmail(e.target.value)}
+          />
+        </div>
+        <div></div>
+        <div>Password:</div>
+        <div>
+          <input
+            type="password"
+            placeholder="Type in a password"
+            value={newPW}
+            onChange={(e) => setNewPW(e.target.value)}
+          />
+        </div>
+        <div></div>
+        <div>Your Interests:</div>
+        <div>
+          <select onChange={(e) => setDeleteInterest(e.target.value)}>
+            {user === null
+              ? null
+              : user.interests.map((sport, index) => {
+                  return <option value={sport}>{sport}</option>;
+                })}
+          </select>
+        </div>
+        <div>
+          <button onClick={() => removeInterest()}>Delete</button>
+        </div>
+        <div>New Interest:</div>
+        <div>
+          <select onChange={(e) => setNewInterest(e.target.value)}>
+            {allInterests.map((sport, index) => {
+              return <option value={sport}>{sport}</option>;
+            })}
+          </select>
+        </div>
+        <div>
+          <button onClick={() => addInterest()}>Add</button>
+        </div>
+        <div>Your City:</div>
+        <div>
+          <input
+            type="text"
+            placeholder={user === null ? null : user.location.city}
+            value={newCity}
+            onChange={(e) => setNewCity(e.target.value)}
+          />
+        </div>
+        <div></div>
       </div>
-      <div className="row">
-        <br />
-        Choose Interest
-        <select onChange={(e) => setNewInterest(e.target.value)}>
-          {allInterests.map((sport, index) => {
-            return <option value={sport}>{sport}</option>;
-          })}
-        </select>
-        <button onClick={() => addInterest()}>Add</button>
-      </div>
       <br />
-      Your Location:
-      <input
-        type="text"
-        placeholder={user === null ? null : user.location.city}
-        value={newCity}
-        onChange={(e) => setNewCity(e.target.value)}
-      />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       Your Location:
       {position === null ? null : (
