@@ -12,21 +12,23 @@ const AccountView = () => {
   const [invites, setInvites] = useState(null);
   const [leagues, setLeagues] = useState(null);
   useEffect(() => {
-    axios.get(`/users/${id}`).then((res) => {
+    axios.get(`https://matchup-be.herokuapp.com/users/${id}`).then((res) => {
       console.log("This is the whole User", res.data[0]);
       setUser(res.data[0]);
     });
   }, []);
   useEffect(() => {
-    axios.get(`/events/${id}`).then((res) => {
+    axios.get(`https://matchup-be.herokuapp.com/events/${id}`).then((res) => {
       console.log("THis is events");
       setEvents(res.data);
     });
   }, []);
   useEffect(() => {
-    axios.get(`/events/${id}/getinvites`).then((res) => {
-      setInvites(res.data);
-    });
+    axios
+      .get(`https://matchup-be.herokuapp.com/events/${id}/getinvites`)
+      .then((res) => {
+        setInvites(res.data);
+      });
   }, []);
   useEffect(() => {
     axios.get(`/leagues/${id}`).then((res) => {

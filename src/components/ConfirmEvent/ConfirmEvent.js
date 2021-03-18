@@ -19,12 +19,12 @@ const ConfirmEvent = ({
   const { id } = useParams();
   const [info, setInfo] = useState("");
   const insertUser = async () => {
-    await axios.post("/leagues/insertuser", {
+    await axios.post("https://matchup-be.herokuapp.com/leagues/insertuser", {
       activity: activity,
       player_id: user._id,
       player_name: user.username,
     });
-    await axios.put("/leagues/attend", {
+    await axios.put("https://matchup-be.herokuapp.com/leagues/attend", {
       activity: activity,
       player_id: user._id,
     });

@@ -9,7 +9,7 @@ const League = ({ league, user }) => {
 
   useEffect(() => {
     axios
-      .post("/users/filter", {
+      .post("https://matchup-be.herokuapp.com/users/filter", {
         latLng: user.location.latLng,
         activity: league.activity,
       })

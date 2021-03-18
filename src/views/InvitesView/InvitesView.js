@@ -8,7 +8,7 @@ const InvitesView = ({ invites, user }) => {
 
   const accept = async (event_id) => {
     await axios
-      .post(`/events/${id}/accept`, {
+      .post(`https://matchup-be.herokuapp.com/events/${id}/accept`, {
         event_id: event_id,
       })
       .then((res) => {
@@ -19,7 +19,7 @@ const InvitesView = ({ invites, user }) => {
 
   const cancel = (event_id) => {
     axios
-      .post(`/events/${id}/cancel`, {
+      .post(`https://matchup-be.herokuapp.com/events/${id}/cancel`, {
         event_id: event_id,
       })
       .then((res) => {

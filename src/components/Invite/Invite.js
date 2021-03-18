@@ -49,12 +49,12 @@ const Invite = ({ invite, accept, cancel, user }) => {
   };
 
   const insertUser = async () => {
-    await axios.post("/leagues/insertuser", {
+    await axios.post("https://matchup-be.herokuapp.com/leagues/insertuser", {
       activity: invite.activity,
       player_id: user._id,
       player_name: user.username,
     });
-    await axios.put("/leagues/attend", {
+    await axios.put("https://matchup-be.herokuapp.com/leagues/attend", {
       activity: invite.activity,
       player_id: user._id,
     });

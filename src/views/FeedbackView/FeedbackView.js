@@ -77,13 +77,13 @@ const FeedbackView = ({ events }) => {
       })
       .then((res) => console.log(res)); */
     await axios
-      .put("/leagues/win", {
+      .put("https://matchup-be.herokuapp.com/leagues/win", {
         activity: event.activity,
         winners: winners,
       })
       .then((res) => console.log("THis is winners: ", res));
     await axios
-      .put("/events/feedback", {
+      .put("https://matchup-be.herokuapp.com/events/feedback", {
         id: event._id,
       })
       .then((res) => {

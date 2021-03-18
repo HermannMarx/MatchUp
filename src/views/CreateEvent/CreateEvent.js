@@ -92,7 +92,7 @@ const CreateEvent = ({ user }) => {
   const postEvent = async () => {
     console.log(Date.now());
     await axios
-      .post("/events", {
+      .post("https://matchup-be.herokuapp.com/events", {
         activity: activity,
         city: city,
         latLng: latLng,
@@ -130,7 +130,7 @@ const CreateEvent = ({ user }) => {
   // get filtered useres
   useEffect(async () => {
     await axios
-      .post("/users/filter", {
+      .post("https://matchup-be.herokuapp.com/users/filter", {
         latLng: latLng,
         activity: activity,
       })
@@ -148,7 +148,7 @@ const CreateEvent = ({ user }) => {
   useEffect(async () => {
     console.log("This is event_id: ", event_id);
     await axios
-      .post("/events/invite", {
+      .post("https://matchup-be.herokuapp.com/events/invite", {
         id: event_id,
         players: invitedPlayers,
       })

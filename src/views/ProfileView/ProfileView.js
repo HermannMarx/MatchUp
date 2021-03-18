@@ -88,7 +88,7 @@ const ProfileView = ({ user }) => {
 
   const updateProfile = () => {
     axios
-      .put("/users", {
+      .put("https://matchup-be.herokuapp.com/users", {
         id: id,
         username: newUsername,
         email: newEmail,
@@ -109,7 +109,7 @@ const ProfileView = ({ user }) => {
       if (interest === deleteInterest) remove.splice(index, 1);
     });
     await axios
-      .put("/users/rmsport", {
+      .put("https://matchup-be.herokuapp.com/users/rmsport", {
         id: id,
         interests: remove,
       })
@@ -124,7 +124,7 @@ const ProfileView = ({ user }) => {
     if (!add.includes(newInterest)) add.push(newInterest);
 
     await axios
-      .put("/users/addsport", {
+      .put("https://matchup-be.herokuapp.com/users/addsport", {
         id: id,
         interests: add,
       })
