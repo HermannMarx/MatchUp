@@ -8,12 +8,14 @@
   color: whitesmoke;
 }
 .TopBarLogin img {
-  height: 6vh;
-  margin: 1.5vh 1vw;
+  height: 8.5vh;
+  margin-left: 1vh;
+  margin-top: 1vh;
+  border-radius: 20%;
 }
 .TopBarLogin p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  font-family: "Caveat", cursive;
+  font-weight: 900;
   font-size: 8vh;
   align-self: center;
   justify-self: center;
@@ -34,12 +36,12 @@
     color: whitesmoke;
   }
   .TopBarLogin img {
-    height: 6vh;
-    margin: 1.5vh 1vw;
+    height: 8.5vh;
+    margin-left: 1vh;
   }
 
   .TopBarLogin p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Caveat", cursive;
     font-weight: bold;
     font-size: 6vh;
     align-self: center;

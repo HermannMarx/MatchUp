@@ -1,12 +1,23 @@
+.ContentView {
+  min-height: 80vh;
+  height: fit-content;
+}
+
 .LeaguesView {
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 600px) {
-  .LeaguesView {
+  .ContentView {
     width: 100vw;
-    height: 80vh;
+    min-height: 80vh;
+    height: fit-content;
+  }
+
+  .LeaguesView {
+    /*  width: 100vw;
+    height: 80vh; */
   }
 }

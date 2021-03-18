@@ -1,5 +1,6 @@
-.EventsView {
-  height: 80vh;
+.ContentView {
+  min-height: 80vh;
+  height: fit-content;
 }
 
 .eventContainer {
@@ -8,11 +9,6 @@
 }
 
 .sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  right: 0;
-  padding: 50px;
 }
 
 .selectbutton {
@@ -24,6 +20,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: -webkit-sticky;
+  position: fixed;
+  bottom: 0;
+  right: 20vw;
+  margin: 3vw;
 }
 
 .EventsViewLink {
@@ -31,9 +32,10 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .EventsView {
+  .ContentView {
     width: 100vw;
-    height: 80vh;
+    min-height: 80vh;
+    height: fit-content;
   }
   .selectbutton {
     background-color: #fdf637;
@@ -44,5 +46,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 5vw;
   }
 }

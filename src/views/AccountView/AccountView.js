@@ -48,7 +48,7 @@ const AccountView = () => {
               border: "6px solid #FDF637",
             }}
           >
-            Events
+            EVENTS
           </NavLink>
           <NavLink
             to={`/${id}/invites`}
@@ -58,7 +58,7 @@ const AccountView = () => {
               border: "6px solid #FF092D",
             }}
           >
-            Invites
+            INVITES
           </NavLink>
           <NavLink
             to={`/${id}/leagues`}
@@ -68,7 +68,7 @@ const AccountView = () => {
               border: "6px solid #1239FF",
             }}
           >
-            Ranking
+            RANKING
           </NavLink>
         </div>
         <SelectView

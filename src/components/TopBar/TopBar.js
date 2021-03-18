@@ -22,9 +22,9 @@ const TopBar = () => {
 
       <div>
         <button onClick={() => toggleDropDown()}>
-          <div style={{ color: "#FDF637" }}>.</div>
-          <div style={{ color: "#FF092D" }}>.</div>
-          <div style={{ color: "#1239FF" }}>.</div>
+          <div style={{ color: "#FDF637", fontFamily: "Arial" }}>.</div>
+          <div style={{ color: "#FF092D", fontFamily: "Arial" }}>.</div>
+          <div style={{ color: "#1239FF", fontFamily: "Arial" }}>.</div>
         </button>
         {dropDown ? (
           <ul class="dropdown">

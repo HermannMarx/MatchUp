@@ -29,7 +29,7 @@ const InvitesView = ({ invites, user }) => {
   };
 
   return (
-    <div className="InvitesView">
+    <div className="InvitesView ContentView">
       {invites === null
         ? null
         : invites.map((invite, index) => {

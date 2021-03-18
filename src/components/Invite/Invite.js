@@ -62,7 +62,29 @@ const Invite = ({ invite, accept, cancel, user }) => {
 
   return (
     <div className="Invite">
-      Activity: {invite.activity}
+      <div className="infoBlock">
+        <div>Activity:</div>
+        <div>{invite.activity}</div>
+        <div>Location:</div>
+        <div>{invite.location.city}</div>
+        <div>Date:</div>
+        <div>{invite.starttime.split("T")[0]}</div>
+        <div>Start: </div>
+        <div>
+          {invite.starttime.split("T")[1].split(":")[0] +
+            ":" +
+            invite.starttime.split("T")[1].split(":")[1]}
+        </div>
+        <div>End: </div>
+        <div>
+          {invite.endtime.split("T")[1].split(":")[0] +
+            ":" +
+            invite.endtime.split("T")[1].split(":")[1]}
+        </div>
+        <div>Organizer:</div>
+        <div>{invite.organizer_name ? invite.organizer_name : null}</div>
+      </div>
+      {/* Activity: {invite.activity}
       <br />
       Location: {invite.location.city}
       <br />
@@ -79,30 +101,43 @@ const Invite = ({ invite, accept, cancel, user }) => {
         invite.endtime.split("T")[1].split(":")[1]}
       <br />
       Organizer: {invite.organizer_name ? invite.organizer_name : null}
-      <br />
-      <button className="button" onClick={togglePlayers}>
-        Players
-      </button>
-      {playersList === false
-        ? null
-        : invite.players.map((name, index) => {
-            return (
-              <div>
-                {index + 1}. {name.player_name}
-              </div>
-            );
-          })}
-      <br />
-      <button className="button" onClick={toggleMap}>
-        See Map
-      </button>
+      <br /> */}
+      <div className="infoButtonContainer">
+        <button className="invitebutton" onClick={togglePlayers}>
+          PLAYERS
+        </button>
+        <button className="invitebutton" onClick={toggleMap}>
+          MAP
+        </button>
+        <button className="invitebutton" onClick={toggleInfo}>
+          INFO
+        </button>
+      </div>
+      <div className={playersList ? `inviteList` : ""}>
+        {playersList === false
+          ? null
+          : invite.players.map((name, index) => {
+              if (name.accept === true) {
+                return <div className="accept">{name.player_name}</div>;
+              } else if (name.answer === false) {
+                return <div className="pending">{name.player_name}</div>;
+              } else {
+                return <div className="cancel">{name.player_name}</div>;
+              }
+              /*   return (
+                <div>
+                  {index + 1}. {name.player_name}
+                </div>
+              ); */
+            })}
+      </div>
+
       {map === false ? null : (
         <MapContainer
           center={position ? position : null}
           zoom={11}
           scrollWheelZoom={false}
-          className="map"
-          id="map"
+          className="invitemap"
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -115,23 +150,22 @@ const Invite = ({ invite, accept, cancel, user }) => {
           </Marker>
         </MapContainer>
       )}
-      <button className="button" onClick={toggleInfo}>
-        See Info
-      </button>
-      {info === false ? null : invite.information}
-      <br />
+      <div className={info ? "infoInvite" : ""}>
+        {info === false ? null : invite.information}
+      </div>
+
       <div className="buttons">
         <button
-          className="button"
+          id="accept"
           onClick={() => {
             insertUser();
             accept(invite._id);
           }}
         >
-          Accept
+          ACCEPT
         </button>
-        <button className="button" onClick={() => cancel(invite._id)}>
-          Cancel
+        <button className="invitebutton" onClick={() => cancel(invite._id)}>
+          CANCEL
         </button>
       </div>
     </div>
