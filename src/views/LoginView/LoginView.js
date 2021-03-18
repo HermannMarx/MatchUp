@@ -2,11 +2,15 @@ import "./styles.css";
 import TopBarLogin from "../../components/TopBarLogin/TopBarLogin";
 import SignUpIn from "../../components/SignUpIn/SignUpIn";
 
-const LoginView = ({ userUpdate }) => {
+const LoginView = (
+  {
+    /* userUpdate */
+  }
+) => {
   return (
     <div className="LoginView">
       <TopBarLogin />
-      <SignUpIn userUpdate={userUpdate} />
+      <SignUpIn /* userUpdate={userUpdate} */ />
     </div>
   );
 };

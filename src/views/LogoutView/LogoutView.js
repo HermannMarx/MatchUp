@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import TopBarLogin from "../../components/TopBarLogin/TopBarLogin";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 const LogoutView = () => {
@@ -10,7 +11,14 @@ const LogoutView = () => {
   return (
     <div className="LogoutView">
       <TopBarLogin />
-      You are logged out!
+      <p className="title">You are logged out!</p>
+      <br />
+      <p className="logout">
+        Get back to the login.{" "}
+        <Link to="/login" className="linkLogout">
+          Click here!
+        </Link>
+      </p>
     </div>
   );
 };

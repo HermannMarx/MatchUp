@@ -4,6 +4,18 @@
   min-height: 100vh;
 }
 
+.logout {
+  font-size: 1vh;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.linkLogout {
+  color: #fdf637;
+  text-decoration: none;
+  align-self: center;
+}
+
 @media only screen and (max-width: 600px) {
   .LogoutView {
     width: 100vw;

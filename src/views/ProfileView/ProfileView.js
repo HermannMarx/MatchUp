@@ -28,8 +28,6 @@ const ProfileView = ({ user }) => {
     "Badminton",
     "Ping Pong",
     "Boules",
-    "Ice Hockey",
-    "Wrestling",
   ];
   const [newUsername, setNewUsername] = useState(null);
   const [newEmail, setNewEmail] = useState(null);

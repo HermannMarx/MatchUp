@@ -8,6 +8,12 @@
   align-items: center;
 }
 
+p {
+  font-size: 5vh;
+  color: whitesmoke;
+  text-align: center;
+}
+
 .title {
   text-align: center;
   margin: 2vh auto;
@@ -25,6 +31,7 @@
   height: 5vh;
   font-size: 2vh;
 }
+
 .row {
   display: flex;
 }

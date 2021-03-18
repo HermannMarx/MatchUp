@@ -20,6 +20,10 @@ button {
   font-weight: bold;
 }
 
+p {
+  font-size: 1vh;
+}
+
 @media only screen and (max-width: 600px) {
   .App {
     width: 100vw;

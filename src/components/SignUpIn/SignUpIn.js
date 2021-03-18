@@ -41,7 +41,7 @@ const SignUpIn = ({ userUpdate }) => {
         }
       )
       .then((res) => {
-        userUpdate(res);
+        /* userUpdate(res); */
         console.log(res.data._id);
         console.log("THis is login-data: ", res);
         history.push(`/${res.data._id}/events`);
