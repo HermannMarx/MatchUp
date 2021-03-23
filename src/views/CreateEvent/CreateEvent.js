@@ -85,8 +85,6 @@ const CreateEvent = ({ user }) => {
     setPlayers({ data: [...players.data, remove] });
     const splicePlayer = invitedPlayers.splice(num, 1);
     setInvitedPlayers(invitedPlayers);
-    console.log("This invites after: ", invitedPlayers);
-    console.log("This players after: ", players.data);
   };
 
   const postEvent = async () => {
@@ -113,21 +111,6 @@ const CreateEvent = ({ user }) => {
     alert("Your event has been created");
   };
 
-  /*   useEffect(() => {
-    setLatLng(user.location.latLng);
-  }, []);
- */
-  /*   useEffect(async () => {
-    await axios.get("http://localhost:3000/users").then((res) => {
-      console.log("This is getPlayers:", res.data);
-      const players = res.data;
-      const spliceOrganzier = res.data.map((player, index) => {
-        if (player._id == id) players.splice(index, 1);
-      });
-      setPlayers({ isLoading: false, data: players });
-    });
-  }, []); */
-  // get filtered useres
   useEffect(async () => {
     await axios
       .post("/users/filter", {

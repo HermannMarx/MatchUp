@@ -58,8 +58,6 @@
 }
 
 #accept {
-  /*  background-color: transparent;
-  color: whitesmoke; */
   border: 5px solid #1239ff;
   border-radius: 5%;
   width: 30%;
@@ -79,11 +77,6 @@
   color: black;
 }
 
-/* #accept:hover {
-  background-color: #1239ff;
-  color: black;
-} */
-
 @media only screen and (max-width: 600px) {
   .Invite {
     width: 95vw;
@@ -93,11 +86,6 @@
     background-color: #ff092d;
     color: black;
   }
-
-  /*   #accept:hover {
-    background-color: #1239ff;
-    color: black;
-  } */
 
   .invitemap {
     height: 60vw;

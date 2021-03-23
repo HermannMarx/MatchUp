@@ -44,8 +44,6 @@ const Event = ({ event }) => {
   const expDate =
     yr + "-" + month + "-" + day + "T" + hrs + ":" + mins + ":00.000+00:00";
 
-  console.log("This is expiredate: ", expDate);
-
   const togglePlayers = () => {
     if (playersList) setPlayersList(false);
     else setPlayersList(true);

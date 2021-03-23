@@ -2,11 +2,11 @@ import "./styles.css";
 import TopBarLogin from "../../components/TopBarLogin/TopBarLogin";
 import SignUp from "../../components/SignUp/SignUp";
 
-const LoginView = ({ userUpdate }) => {
+const LoginView = () => {
   return (
     <div className="LoginView">
       <TopBarLogin />
-      <SignUp userUpdate={userUpdate} />
+      <SignUp />
     </div>
   );
 };

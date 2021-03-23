@@ -4,7 +4,6 @@
 }
 
 .LeaguesView {
-  /* height: 80vh; */
   display: flex;
   flex-wrap: wrap;
 }
@@ -17,7 +16,5 @@
   }
 
   .LeaguesView {
-    /*  width: 100vw;
-    height: 80vh; */
   }
 }

@@ -12,7 +12,7 @@ import {
 
 import L from "leaflet";
 
-const SignUp = ({ userUpdate }) => {
+const SignUp = () => {
   let history = useHistory();
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);

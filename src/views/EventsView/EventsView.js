@@ -5,15 +5,7 @@ import { useEffect, useState } from "react";
 
 const EventsView = ({ events }) => {
   const { id } = useParams();
-  /*  const [eventOrder, setEventOrder] = useState(null);
-  useEffect(() => {
-    if (events === null) return null;
-    else {
-      events.sort();
-      setEventOrder(events);
-      console.log("Is t his order?", events);
-    }
-  }, [events]); */
+
   return (
     <div className="ContentView">
       <div className="eventContainer">

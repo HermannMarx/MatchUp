@@ -84,24 +84,7 @@ const Invite = ({ invite, accept, cancel, user }) => {
         <div>Organizer:</div>
         <div>{invite.organizer_name ? invite.organizer_name : null}</div>
       </div>
-      {/* Activity: {invite.activity}
-      <br />
-      Location: {invite.location.city}
-      <br />
-      Date: {invite.starttime.split("T")[0]}
-      <br />
-      Start:{" "}
-      {invite.starttime.split("T")[1].split(":")[0] +
-        ":" +
-        invite.starttime.split("T")[1].split(":")[1]}
-      <br />
-      End:{" "}
-      {invite.endtime.split("T")[1].split(":")[0] +
-        ":" +
-        invite.endtime.split("T")[1].split(":")[1]}
-      <br />
-      Organizer: {invite.organizer_name ? invite.organizer_name : null}
-      <br /> */}
+
       <div className="infoButtonContainer">
         <button className="invitebutton" onClick={togglePlayers}>
           PLAYERS
@@ -124,11 +107,6 @@ const Invite = ({ invite, accept, cancel, user }) => {
               } else {
                 return <div className="canceled">{name.player_name}</div>;
               }
-              /*   return (
-                <div>
-                  {index + 1}. {name.player_name}
-                </div>
-              ); */
             })}
       </div>
 

@@ -3,29 +3,10 @@ import { useState } from "react";
 import axios from "axios";
 import { useHistory, Link } from "react-router-dom";
 
-const SignUpIn = ({ userUpdate }) => {
+const SignUpIn = () => {
   let history = useHistory();
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-
-  /*  const tryLogin = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:3000/users/login", {
-        username: username,
-        password: password,
-      })
-      .then((res) => {
-        userUpdate(res);
-        console.log(res.data._id);
-        console.log("THis is login-data: ", res);
-        history.push(`/${res.data._id}/events`);
-      })
-      .catch((e) => {
-        console.error(Error(e));
-        history.push("/");
-      });
-  }; */
 
   const tryLogin = (e) => {
     e.preventDefault();
@@ -41,9 +22,6 @@ const SignUpIn = ({ userUpdate }) => {
         }
       )
       .then((res) => {
-        /* userUpdate(res); */
-        console.log(res.data._id);
-        console.log("THis is login-data: ", res);
         history.push(`/${res.data._id}/events`);
       })
       .catch((e) => {

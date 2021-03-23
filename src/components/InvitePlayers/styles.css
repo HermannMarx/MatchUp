@@ -16,7 +16,6 @@ p {
   border-radius: 5%;
   margin: 1vh auto;
   color: whitesmoke;
-  /*  overflow: scroll; */
 }
 .playerBlock {
   display: grid;

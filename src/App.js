@@ -9,10 +9,6 @@ import LogoutView from "./views/LogoutView/LogoutView";
 function App() {
   const [userId, setUserId] = useState(null);
 
-  const userIdUpdate = (update) => {
-    setUserId(update);
-  };
-
   return (
     <div className="App AppRe">
       <Switch>
@@ -20,7 +16,7 @@ function App() {
           <SignUpView />
         </Route>
         <Route path="/login">
-          <LoginView userUpdate={userIdUpdate} />
+          <LoginView />
         </Route>
         <Route path="/logout">
           <LogoutView />
@@ -29,7 +25,7 @@ function App() {
           <AccountView />
         </Route>
         <Route path="/">
-          <LoginView userUpdate={userIdUpdate} />
+          <LoginView />
         </Route>
       </Switch>
     </div>
