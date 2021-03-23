@@ -1,0 +1,61 @@
+.ProfileView {
+  background-color: rgb(70, 70, 70);
+  width: 60vw;
+  min-height: 80vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  margin: 2vh auto;
+  font-weight: bold;
+}
+
+.profileGrid {
+  width: 60%;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 30% 45% 25%;
+  grid-template-rows: 20% 20% 20% 20% 20% 20% 20%;
+}
+.ProfileView button {
+  height: 5vh;
+  font-size: 2vh;
+}
+
+.profilemap {
+  height: 30vh;
+  width: 60%;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 2vh auto;
+}
+
+.row {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .ProfileView {
+    width: 100vw;
+    height: 82vh;
+    background-color: rgb(70, 70, 70);
+  }
+  .profileGrid {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 30% 45% 25%;
+    grid-template-rows: 20% 20% 20% 20% 20% 20% 20%;
+  }
+  .profilemap {
+    height: 30vh;
+    width: 90%;
+  }
+
+  .ProfileView button {
+    width: 20vw;
+  }
+}

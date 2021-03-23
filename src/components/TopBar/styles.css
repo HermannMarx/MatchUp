@@ -1,11 +1,139 @@
 .TopBar {
-  background-color: rgb(255, 199, 199);
+  background-color: black;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
+}
+.TopBar img {
+  height: 8.5vh;
+  margin-left: 1vh;
+  margin-top: 1vh;
+  border-radius: 20%;
+}
+.TopBar p {
+  font-family: "Caveat", cursive;
+  font-weight: 900;
+  font-size: 8vh;
+  align-self: center;
+  justify-self: center;
+}
+.TopBar button {
+  height: 8vh;
+  width: 8vh;
+  margin-right: 1vh;
+  border: 6px solid gray;
+  border-radius: 20%;
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: black;
+}
+
+.TopBar button:active {
+  border: 6px solid whitesmoke;
+}
+.TopBar button:hover {
+  border: 6px solid whitesmoke;
+}
+
+.dropdown {
+  position: absolute;
+  top: 10vh;
+  right: 19vw;
+}
+
+.dropdown li {
+  width: 20vw;
+  height: 5vw;
+  font-size: 2.5vw;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  color: whitesmoke;
+  border: 5px solid gray;
+  background-color: rgb(46, 46, 46);
+
+  border-radius: 5%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.profile:hover {
+  border: 5px solid #fdf637;
+  color: #fdf637;
+}
+.league:hover {
+  border: 5px solid#FF092D;
+  color: #ff092d;
+}
+.logout:hover {
+  border: 5px solid #1239ff;
+  color: #1239ff;
 }
 
 @media only screen and (max-width: 600px) {
   .TopBar {
     width: 100vw;
     height: 10vh;
-    background-color: rgb(225, 255, 89);
+    background-color: black;
+    display: flex;
+    color: whitesmoke;
+  }
+  .TopBar img {
+    height: 8.5vh;
+    margin-left: 1vh;
+  }
+
+  .TopBar p {
+    font-family: "Caveat", cursive;
+    font-weight: bold;
+    font-size: 6vh;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .TopBar button {
+    height: 8vh;
+    width: 8vh;
+    margin-right: 1vh;
+    border: 6px solid gray;
+    border-radius: 20%;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+  }
+  .TopBar button:active {
+    border: 6px solid whitesmoke;
+  }
+  .TopBar button:hover {
+    border: 6px solid whitesmoke;
+  }
+
+  .dropdown {
+    position: absolute;
+    right: 0;
+  }
+  .dropdown li {
+    width: 50vw;
+    height: 18.75vw;
+    font-size: 6.25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile {
+    color: #fdf637;
+  }
+  .league {
+    color: #ff092d;
+  }
+  .logout {
+    color: #1239ff;
   }
 }

@@ -1,0 +1,29 @@
+.LogoutView {
+  background-color: rgb(70, 70, 70);
+  width: 60vw;
+  min-height: 100vh;
+}
+
+.logout {
+  font-size: 4vh;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.linkLogout {
+  color: #fdf637;
+  text-decoration: none;
+  align-self: center;
+}
+
+Link:hover {
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .LogoutView {
+    width: 100vw;
+    height: 80vh;
+    background-color: rgb(70, 70, 70);
+  }
+}

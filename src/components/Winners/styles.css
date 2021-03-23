@@ -1,0 +1,81 @@
+.Winners {
+  height: 33vh;
+  width: 45%;
+  border: 5px solid #1239ff;
+  border-radius: 5%;
+  margin: 1vh auto;
+  color: whitesmoke;
+}
+
+.selectwinners {
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+  margin: 2vh auto;
+}
+
+/* .inRow {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+} */
+
+.inRow {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.field {
+  color: whitesmoke;
+  width: 55vw;
+  height: 30vh;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 2vh auto;
+}
+.field button {
+  width: 5vh;
+  height: 5vh;
+}
+.winnerBlock {
+  width: 80%;
+  margin: 2vh auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.submitButton {
+  /* position: -webkit-sticky; */
+  position: absolute;
+  bottom: 1vh;
+  left: 25vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .Winners {
+    width: 95vw;
+    height: 33vh;
+  }
+  .field {
+    width: 90vw;
+  }
+  .winnerBlock {
+    width: 95vw;
+  }
+  .inRow {
+    display: flex;
+    width: 30vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .submitButton {
+    /* position: -webkit-sticky; */
+    position: absolute;
+    bottom: 1vh;
+    left: 5vw;
+  }
+}

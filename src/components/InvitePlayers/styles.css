@@ -1,0 +1,60 @@
+p {
+  color: whitesmoke;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 3vh;
+  color: whitesmoke;
+}
+
+.InvitePlayers {
+  height: 25vh;
+  width: 90%;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 1vh auto;
+  color: whitesmoke;
+  /*  overflow: scroll; */
+}
+.playerBlock {
+  display: grid;
+  width: 80%;
+  margin: 2vh auto;
+  grid-template-columns: 50% 50%;
+}
+.playerSelect {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.addRemove {
+  width: 5vh;
+  height: 5vh;
+}
+.navButtons {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .InvitePlayers {
+    width: 95vw;
+    height: 25vh;
+    color: whitesmoke;
+    overflow: scroll;
+  }
+  .title {
+    font-weight: bold;
+    text-align: center;
+  }
+  .playerBlock {
+    width: 95vw;
+  }
+  .playerSelect {
+    width: 40vw;
+  }
+}

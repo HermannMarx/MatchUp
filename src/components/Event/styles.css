@@ -1,12 +1,112 @@
 .Event {
-  background-color: rgb(218, 113, 183);
-  height: 10vh;
+  height: max-content;
+  width: 45%;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 1vh auto;
+  color: whitesmoke;
+  /*   padding: 2vh; */
+}
+
+.infoBlock {
+  width: 60%;
+  margin: 2vh auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  color: whitesmoke;
+}
+
+.feedbackContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.feedback {
+  text-decoration: none;
+}
+
+.feedback button {
+  margin-top: 2vh;
+}
+.feedback button:hover {
+  background-color: transparent;
+  color: whitesmoke;
+  border: 5px solid #fdf637;
+}
+
+.infoButtonContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3vh;
+}
+
+.infobutton {
+  background-color: transparent;
+  color: whitesmoke;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  width: 30%;
+  height: 7vh;
+  font-size: 3vh;
+}
+
+.infobutton:hover {
+  background-color: #fdf637;
+  color: black;
+}
+.playerList {
+  width: 90%;
+  margin: 2vh auto;
+  display: grid;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  padding: 2vh;
+  grid-template-columns: 50% 50%;
+}
+
+.accept {
+  color: #1239ff;
+  font-weight: bold;
+}
+
+.pending {
+  color: #fdf637;
+  font-weight: bold;
+}
+
+.canceled {
+  color: #ff092d;
+  font-weight: bold;
+}
+
+.eventmap {
+  width: 90%;
+  height: 20vw;
+  color: whitesmoke;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 2vh auto;
+}
+.infoField {
+  width: 90%;
+  height: auto;
+  min-height: 5vh;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 2vh auto;
+  padding: 2vh;
 }
 
 @media only screen and (max-width: 600px) {
   .Event {
-    width: 100vw;
-    height: 10vh;
-    background-color: rgb(201, 194, 97);
+    width: 95vw;
+    color: whitesmoke;
+  }
+  .eventmap {
+    width: 90%;
+    height: 60vw;
+    color: whitesmoke;
+    border: 5px solid #fdf637;
+    border-radius: 5%;
   }
 }

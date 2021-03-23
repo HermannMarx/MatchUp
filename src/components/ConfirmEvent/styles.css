@@ -1,0 +1,43 @@
+.ConfirmEvent {
+  /*   height: auto;
+  width: 90%;
+  border: 5px solid #fdf637;
+  border-radius: 5%;
+  margin: 1vh auto;
+  color: whitesmoke; */
+}
+
+.summaryBlock {
+  width: 60%;
+  margin: 2vh auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  color: whitesmoke;
+}
+
+.navButtons {
+  display: flex;
+}
+
+.textarea {
+  width: 50vw;
+  margin: 1vh auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .ConfirmEvent {
+    width: 95vw;
+    /*   height: 60vh; */
+    color: whitesmoke;
+  }
+  .summaryBlock {
+    width: 90%;
+    margin: 2vh auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    color: whitesmoke;
+  }
+  .textarea {
+    width: 80vw;
+  }
+}

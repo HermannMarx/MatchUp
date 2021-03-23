@@ -1,24 +1,55 @@
 .AccountView {
-  background-color: indianred;
-  height: 100vh;
+  /* height: 100vh; */
+  height: fit-content;
+  min-height: 100vh;
+}
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .buttonContainer {
-  background-color: lawngreen;
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
 }
-.buttonContainer button {
-  background-color: red;
+
+.link {
+  width: 32%;
+  height: 8vh;
+  background-color: rgb(46, 46, 46);
+  border-radius: 5%;
+  border: 6px solid gray;
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: "Oswald", sans-serif;
+  font-size: 5vh;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
   .AccountView {
     width: 100vw;
-    height: 100vh;
-    background-color: rgb(208, 255, 0);
+    height: fit-content;
+    min-height: 100vh;
   }
   .buttonContainer {
-    background-color: purple;
+    width: 100vw;
   }
-  .buttonContainer button {
-    background-color: green;
+  .link {
+    width: 32%;
+    height: 8vh;
+    background-color: rgb(46, 46, 46);
+    border-radius: 5%;
+    border: 6px solid gray;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 3vh;
+    font-weight: bold;
+    text-align: center;
   }
 }

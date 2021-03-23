@@ -1,12 +1,49 @@
 .League {
-  background-color: rgb(133, 85, 180);
-  height: 10vh;
+  width: 45%;
+  height: fit-content;
+  max-height: 50vh;
+  /* overflow: scroll; */
+  border: 5px solid #1239ff;
+  border-radius: 5%;
+  margin: 1vh auto;
 }
 
+.League div {
+  font-size: 2vh;
+}
+
+.League p {
+  font-size: 2vh;
+}
+
+.leagueName {
+  border: 5px solid #1239ff;
+  border-radius: 5%;
+  color: #1239ff;
+  font-weight: bold;
+  width: 50%;
+  margin: 2vh auto 0 auto;
+  text-align: center;
+}
+
+.marked {
+  border: 5px solid #1239ff;
+  border-radius: 5%;
+}
+.you {
+  color: #1239ff;
+  font-weight: bold;
+}
+
+/* .leagueBlock {
+  width: 80%;
+  display: grid;
+  color: whitesmoke;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+} */
 @media only screen and (max-width: 600px) {
   .League {
-    width: 100vw;
-    height: 10vh;
-    background-color: rgb(210, 223, 26);
+    width: 95vw;
   }
 }

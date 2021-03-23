@@ -1,0 +1,15 @@
+.ChooseWinners {
+  height: 33vh;
+  width: 45%;
+  border: 5px solid #1239ff;
+  border-radius: 5%;
+  margin: 1vh auto;
+  color: whitesmoke;
+}
+
+@media only screen and (max-width: 600px) {
+  .ChooseWinners {
+    width: 95vw;
+    height: 33vh;
+  }
+}

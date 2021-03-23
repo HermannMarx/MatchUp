@@ -1,12 +1,108 @@
 .Invite {
-  background-color: rgb(144, 84, 204);
-  height: 10vh;
+  height: max-content;
+  width: 45%;
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  margin: 1vh auto;
+
+  color: whitesmoke;
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 3vh auto;
+}
+.invitebutton {
+  background-color: transparent;
+  color: whitesmoke;
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  width: 30%;
+  height: 7vh;
+  font-size: 3vh;
+}
+
+.invitebutton:hover {
+  background-color: #ff092d;
+  color: black;
+}
+
+.inviteList {
+  width: 90%;
+  margin: 2vh auto;
+  display: grid;
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  padding: 2vh;
+  grid-template-columns: 50% 50%;
+}
+
+.invitemap {
+  width: 90%;
+  height: 20vw;
+  color: whitesmoke;
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  margin: 0 auto;
+}
+
+.infoInvite {
+  width: 90%;
+  height: auto;
+  min-height: 5vh;
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  margin: 2vh auto;
+  padding: 2vh;
+}
+
+#accept {
+  /*  background-color: transparent;
+  color: whitesmoke; */
+  border: 5px solid #1239ff;
+  border-radius: 5%;
+  width: 30%;
+  height: 7vh;
+  font-size: 3vh;
+  background-color: #1239ff;
+  color: black;
+}
+
+.cancel {
+  border: 5px solid #ff092d;
+  border-radius: 5%;
+  width: 30%;
+  height: 7vh;
+  font-size: 3vh;
+  background-color: #ff092d;
+  color: black;
+}
+
+/* #accept:hover {
+  background-color: #1239ff;
+  color: black;
+} */
 
 @media only screen and (max-width: 600px) {
   .Invite {
-    width: 100vw;
-    height: 10vh;
-    background-color: rgb(223, 26, 213);
+    width: 95vw;
+  }
+
+  .invitebutton:hover {
+    background-color: #ff092d;
+    color: black;
+  }
+
+  /*   #accept:hover {
+    background-color: #1239ff;
+    color: black;
+  } */
+
+  .invitemap {
+    height: 60vw;
+    color: whitesmoke;
+    border: 5px solid #ff092d;
+    border-radius: 5%;
   }
 }
