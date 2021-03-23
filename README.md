@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Match Up - Join your local sports community!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created for the final assignment at the [WBS CODING SCHOOL](https://www.wbscodingschool.com/) for the Web & App Development Bootcamp.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Description](#description)
+- [Organisation](#organisation)
+- [UI](#ui)
+- [Back-End](#back-end)
+- [API-Endpoints](#api-endpoints)
+<!-- - [Live](#live) -->
+- [Programming](#programming)
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This repository contains the front-end part of a Pokemon Fight application, created for a WBS Coding School assignment.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Organisation
 
-### `npm test`
+Trello Boards:
+[Global Backlog](https://trello.com/b/5b3O3foA/matchup-global-backlog)
+[Sprint 1](https://trello.com/b/iLHIkaPB/matchup-sprint-1)
+[Sprint 2](https://trello.com/b/mPKFPYuN/matchup-sprint-2)
+[Sprint 3](https://trello.com/b/XLXSaDP9/matchup-sprint-3)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## UI
 
-### `npm run build`
+## Back-End
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The back-end part of this project has got its own [GitHub reposetory](https://github.com/HermannMarx/MatchUp_BE). It retrieves its data from a [MongoDB](https://www.mongodb.com/) database by using [mongoose.js](https://mongoosejs.com). The back-end app is deployed on [Heroku](https://matchup-be.herokuapp.com/).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API-Endpoints
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app uses [Axios](https://www.npmjs.com/package/axios) requests to fetch data from the back-end part. Its endpoints and specificly fetched data are:
 
-### `npm run eject`
+| HTTP Method | Endpoint        | Description                                                                                                |
+| ----------- | --------------- | ---------------------------------------------------------------------------------------------------------- |
+| GET         | /users/:id      | Retrieves a specific user by the user's id.                                                                |
+| GET         | /users/logout   | Triggers the logout function in the backend and destroys the session of the user.                          |
+| POST        | /users          | Creates a new user in the database.                                                                        |
+| POST        | /users/filter   | Retrieves all users filtered by an sport interest and a radius of 11 km of the user who does this request. |
+| POST        | /users/login    | Logs the user into her/his account and creates an session based access to it.                              |
+| PUT         | /users          | Updates the users data.                                                                                    |
+| PUT         | /users/rmsport  | Removes an sport interest of an specific user (Update).                                                    |
+| PUT         | /users/addsport | Adds an sport interest of an specific user (Update)                                                        |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| GET | /events/:id | Retrieves all events that belongs to a specific user by the user's id. |
+| GET | /events/:id/getinvites | Retrieves all invitations that belongs to a specific user by the user's id. |
+| POST | /events | Creates a new event in the data base |
+| POST | /events/:id/accept | Inserts in the data of an single event that a user will attend the event. |
+| POST | /events/:id/cancel | Inserts in the data of an single event that a user will not attend the event. |
+| POST | /events/invite | Inserts a user as a possible attendant to a single event. |
+| PUT | /events/feedback | Inserts that the feedback who is a winner of an event has already been given. |
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| GET | /leagues/:id | Retrieves all leagues that a user belongs to by the user's id. |
+| POST |/leagues/insertuser | Inserts an array of users to a specific league. |
+| PUT | /leagues/attend | Increases the number of times a user attended to an event of an specific sport league. |
+| PUT | /leagues/wins | Increases the number of times a user won at events of an specific sport league.|
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<!-- ## Live
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The front-end application is hosted on [Netlfiy](https://poke-death-fight.netlify.app). -->
 
-## Learn More
+## Programming
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project has been developed using [NodeJS](https://nodejs.org/en) and [React.js](https://reactjs.org).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Helpers
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Leaflet.js](https://leafletjs.com/): The tool was used to implement a map into the app and retrieve geographical coordonation points, which are integrated in the data for users and events.
