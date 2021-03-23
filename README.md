@@ -14,7 +14,7 @@ This project was created for the final assignment at the [WBS CODING SCHOOL](htt
 
 ## Description
 
-This repository contains the front-end part of a Pokemon Fight application, created for a WBS Coding School assignment.
+This repository contains the front-end part of the MatchUp Web App.
 
 ## Organisation
 
@@ -26,6 +26,10 @@ Trello Boards:
 - [Sprint 3](https://trello.com/b/XLXSaDP9/matchup-sprint-3)
 
 ## UI
+
+The app starts with a landing page where the user can log in to her/his account. It also has a link to get to a sign up page where the user can create an own account. Within the Account the user can browse between the upcoming 'EVENTS', new 'INVITES' and the 'RANKING' of his local sport leagues. In the single event and invite cards the user can get additional information by clicking on the buttons (PLAYERS, MAP, INFO).
+By clicking the plus button in the EVENTS view the user can create an own sports event by choosing the sport, time, location and by inviting other users in the area of the user.
+By clicking the dropdown button in the upper right corner the user can choose the PROFILE button where she/he can edit the own profile. By clicking the LOGOUT the user gets logged out of the account.
 
 ## Back-End
 
