@@ -31,7 +31,7 @@ const AccountView = () => {
       });
   }, []);
   useEffect(() => {
-    axios.get(`/leagues/${id}`).then((res) => {
+    axios.get(`https://matchup-be.herokuapp.com/leagues/${id}`).then((res) => {
       setLeagues(res.data);
       console.log("This is leagues: ", res);
     });
