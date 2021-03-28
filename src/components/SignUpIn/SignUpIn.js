@@ -34,16 +34,10 @@ const SignUpIn = (
   const tryLogin = (e) => {
     e.preventDefault();
     axios
-      .post(
-        "https://matchup-be.herokuapp.com/users/login",
-        {
-          username: username,
-          password: password,
-        },
-        {
-          withCredentials: true,
-        }
-      )
+      .post("https://matchup-be.herokuapp.com/users/login", {
+        username: username,
+        password: password,
+      })
       .then((res) => {
         /*  userUpdate(res); */
         console.log(res.data._id);
