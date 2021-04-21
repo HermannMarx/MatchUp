@@ -87,30 +87,6 @@ const CreateEvent = ({ user }) => {
     setInvitedPlayers(invitedPlayers);
   };
 
-  const postEvent = async () => {
-    console.log(Date.now());
-    await axios
-      .post("/events", {
-        activity: activity,
-        city: city,
-        latLng: latLng,
-        date: date,
-        starttime: starttime,
-        endtime: endtime,
-        organizer: id,
-        organizer_name: user.username,
-        league_id: league_id,
-        information: information,
-      })
-      .then((res) => {
-        console.log(res.data._id);
-        setEvent_id(res.data._id);
-        history.push(`/${id}/events`);
-        window.location.reload();
-      });
-    alert("Your event has been created");
-  };
-
   useEffect(async () => {
     await axios
       .post("/users/filter", {
@@ -128,7 +104,43 @@ const CreateEvent = ({ user }) => {
       });
   }, [latLng]);
 
-  useEffect(async () => {
+  const postEvent = async () => {
+    console.log(Date.now());
+    let getEvent = await axios
+      .post("/events", {
+        activity: activity,
+        city: city,
+        latLng: latLng,
+        date: date,
+        starttime: starttime,
+        endtime: endtime,
+        organizer: id,
+        organizer_name: user.username,
+        league_id: league_id,
+        information: information,
+      })
+      .then((res) => {
+        console.log(res.data._id);
+        setEvent_id(res.data._id);
+        history.push(`/${id}/events`);
+        return res.data._id;
+      });
+
+    console.log("This is getEvent: ", getEvent);
+    await axios
+      .post("/events/invite", {
+        id: getEvent,
+        players: invitedPlayers,
+      })
+      .then((res) => {
+        console.log("This is invites REs: ", res);
+      });
+
+    alert("Your event has been created");
+    window.location.reload();
+  };
+
+  /*   useEffect(async () => {
     console.log("This is event_id: ", event_id);
     await axios
       .post("/events/invite", {
@@ -138,7 +150,7 @@ const CreateEvent = ({ user }) => {
       .then((res) => {
         console.log("This is invites REs: ", res);
       });
-  }, [event_id]);
+  }, [event_id]); */
 
   return (
     <div className="CreateEvent">
